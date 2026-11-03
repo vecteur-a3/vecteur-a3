@@ -1,0 +1,1482 @@
+<!-- Chemin exact : layouts/_default/single.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {{ partial "head.html" . }}
+
+    <style>
+        /* Palette Vecteur A3 : Deep Teal, Cyber-Slate & Amber YMYL Warning */
+        :root {
+            --primary: #0d9488;
+            --primary-dark: #0f766e;
+            --primary-deeper: #115e59;
+            --primary-light: #ccfbf1;
+            --primary-ultra-light: #f0fdfa;
+            --primary-border: #99f6e4;
+            --dark-950: #090d16;
+            --dark-900: #0f172a;
+            --dark-800: #1e293b;
+            --text-900: #0f172a;
+            --text-800: #1e293b;
+            --text-700: #334155;
+            --text-500: #64748b;
+            --text-400: #94a3b8;
+            --bg-canvas: #f8fafc;
+            --bg-body: #f8fafc;
+            --bg-card: #ffffff;
+            --border-light: #e2e8f0;
+            --border-dark: #cbd5e1;
+            --emerald: #10b981;
+            --emerald-light: #ecfdf5;
+            --emerald-border: #a7f3d0;
+            --amber-bg: #fffbeb;
+            --amber-border: #fcd34d;
+            --amber-text: #92400e;
+        }
+
+        *, *::before, *::after { box-sizing: border-box; }
+        html { scroll-behavior: smooth; overflow-x: hidden; }
+
+        body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            font-size: 15.5px;
+            line-height: 1.7;
+            color: var(--text-700);
+            background-color: var(--bg-canvas);
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a { color: var(--primary); text-decoration: none; font-weight: 600; transition: all 0.2s ease; }
+        a:hover { color: var(--primary-dark); }
+
+        /* =====================================================
+           1. HEADER.SITE-HEADER (Zéro coupure à 768px, 393px, 375px et Desktop)
+           ===================================================== */
+        .site-header {
+            background-color: rgba(9, 13, 22, 0.94);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            position: sticky;
+            top: 0;
+            z-index: 50;
+        }
+        .nav-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 0.65rem;
+            max-width: 980px;
+            margin: 0 auto;
+            padding: 0.75rem 0.9rem;
+        }
+        @media (min-width: 640px) {
+            .nav-inner { padding: 0.85rem 1.25rem; }
+        }
+        @media (min-width: 880px) {
+            .nav-inner { padding: 0.9rem 1.5rem; gap: 1rem; }
+        }
+        .site-brand {
+            font-size: 0.86rem;
+            font-weight: 800;
+            color: #ffffff !important;
+            letter-spacing: -0.02em;
+            line-height: 1.2;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            min-width: 0;
+        }
+        @media (min-width: 540px) {
+            .site-brand {
+                font-size: 0.92rem;
+                white-space: nowrap;
+                flex-shrink: 0;
+            }
+        }
+        @media (min-width: 880px) {
+            .site-brand { font-size: 1.02rem; gap: 0.55rem; }
+        }
+        .brand-mark {
+            width: 27px;
+            height: 27px;
+            border-radius: 7px;
+            background: linear-gradient(135deg, rgba(20, 184, 166, 0.22) 0%, rgba(13, 148, 136, 0.38) 100%);
+            border: 1px solid rgba(45, 212, 191, 0.45);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            box-shadow: 0 0 12px rgba(20, 184, 166, 0.22);
+        }
+        .brand-mark svg {
+            width: 14.5px;
+            height: 14.5px;
+            color: #2dd4bf;
+        }
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+            flex-shrink: 0;
+        }
+        @media (min-width: 880px) {
+            .nav-links { gap: 0.45rem; }
+        }
+        .nav-links a {
+            color: #cbd5e1;
+            font-size: 0.76rem;
+            font-weight: 600;
+            padding: 0.32rem 0.52rem;
+            border-radius: 7px;
+            white-space: nowrap;
+            transition: background-color 0.18s ease, color 0.18s ease;
+        }
+        @media (min-width: 880px) {
+            .nav-links a {
+                font-size: 0.82rem;
+                padding: 0.36rem 0.68rem;
+            }
+        }
+        .nav-links a:hover {
+            color: #ffffff;
+            background-color: rgba(255, 255, 255, 0.08);
+        }
+        .nav-links a.nav-audit-pill {
+            color: #ccfbf1;
+            background-color: rgba(13, 148, 136, 0.22);
+            border: 1px solid rgba(45, 212, 191, 0.35);
+        }
+        .nav-links a.nav-audit-pill:hover {
+            background-color: rgba(13, 148, 136, 0.38);
+            color: #ffffff;
+        }
+        @media (max-width: 739px) {
+            .nav-links .nav-desktop-only { display: none; }
+        }
+
+        /* =====================================================
+           2. HERO DE L'ARTICLE (KPIs calibrés pour 768px sans coupure de date)
+           ===================================================== */
+        .report-hero {
+            background-color: var(--dark-900);
+            background-image:
+                radial-gradient(ellipse 75% 85% at 50% -20%, rgba(13, 148, 136, 0.34), transparent),
+                radial-gradient(circle at 85% 30%, rgba(45, 212, 191, 0.12), transparent 45%);
+            border-bottom: 1px solid var(--dark-800);
+            padding: 2rem 0.9rem 4.35rem;
+            color: #ffffff;
+            overflow: hidden;
+        }
+        @media (min-width: 640px) { .report-hero { padding: 2.65rem 1.25rem 5rem; } }
+        @media (min-width: 880px) { .report-hero { padding: 3rem 1.5rem 5.25rem; } }
+        .report-hero-inner { max-width: 980px; margin: 0 auto; width: 100%; }
+
+        .report-breadcrumb {
+            display: inline-flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 0.42rem;
+            font-size: 0.65rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.055em;
+            color: #cbd5e1;
+            background-color: rgba(15, 23, 42, 0.72);
+            border: 1px solid rgba(45, 212, 191, 0.35);
+            padding: 0.3rem 0.42rem 0.3rem 0.72rem;
+            border-radius: 9999px;
+            margin-bottom: 1.05rem;
+            max-width: 100%;
+            line-height: 1.3;
+        }
+        @media (max-width: 480px) {
+            .report-breadcrumb {
+                border-radius: 10px;
+                padding: 0.36rem 0.65rem;
+                gap: 0.35rem;
+            }
+        }
+        .report-breadcrumb-home {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.36rem;
+            color: #e2e8f0 !important;
+            text-decoration: none !important;
+            font-weight: 700;
+            white-space: nowrap;
+        }
+        .report-breadcrumb-home:hover {
+            color: #2dd4bf !important;
+        }
+        .report-breadcrumb-home svg {
+            width: 13px;
+            height: 13px;
+            color: #2dd4bf;
+            flex-shrink: 0;
+        }
+        .report-breadcrumb-sep {
+            color: #64748b;
+            font-weight: 600;
+            user-select: none;
+        }
+        .report-breadcrumb-topic {
+            color: #ccfbf1;
+            background-color: rgba(13, 148, 136, 0.28);
+            border: 1px solid rgba(45, 212, 191, 0.38);
+            padding: 0.12rem 0.55rem;
+            border-radius: 9999px;
+            font-weight: 800;
+            letter-spacing: 0.04em;
+            white-space: nowrap;
+        }
+
+        .report-hero h1 {
+            font-size: clamp(1.65rem, 5vw, 2.08rem);
+            line-height: 1.15;
+            margin: 0 0 1.05rem 0;
+            letter-spacing: -0.03em;
+            color: #ffffff;
+            font-weight: 800;
+            max-width: 920px;
+        }
+        @media (min-width: 640px) { .report-hero h1 { font-size: 2.25rem; line-height: 1.12; } }
+        @media (min-width: 880px) { .report-hero h1 { font-size: clamp(2.4rem, 3.8vw, 2.95rem); line-height: 1.12; } }
+
+        .meta-group { display: flex; flex-wrap: wrap; gap: 0.45rem; margin: 0 0 1.35rem 0; }
+        @media (min-width: 640px) { .meta-group { gap: 0.65rem; margin: 0 0 1.65rem 0; } }
+        .meta-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+            background-color: rgba(30, 41, 59, 0.78);
+            border: 1px solid rgba(255, 255, 255, 0.14);
+            padding: 0.28rem 0.65rem;
+            border-radius: 9999px;
+            font-size: 0.72rem;
+            color: #e2e8f0;
+            font-weight: 500;
+            white-space: nowrap;
+        }
+        .meta-pill svg { width: 12px; height: 12px; color: #2dd4bf; flex-shrink: 0; }
+        .meta-pill a { color: #2dd4bf !important; text-decoration: underline; }
+
+        .hero-kpi-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 0.6rem;
+            width: 100%;
+        }
+        @media (min-width: 740px) {
+            .hero-kpi-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0.65rem; }
+        }
+        @media (min-width: 880px) { .hero-kpi-grid { gap: 1rem; } }
+        .hero-kpi-card {
+            min-width: 0;
+            background: linear-gradient(180deg, rgba(30, 41, 59, 0.78) 0%, rgba(15, 23, 42, 0.92) 100%);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 11px;
+            padding: 0.7rem 0.72rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.24rem;
+        }
+        @media (min-width: 880px) {
+            .hero-kpi-card { padding: 0.82rem 1rem; }
+        }
+        .hero-kpi-label {
+            font-size: 0.58rem;
+            text-transform: uppercase;
+            letter-spacing: 0.045em;
+            color: #94a3b8;
+            font-weight: 700;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .hero-kpi-value {
+            font-size: 0.75rem;
+            color: #ffffff;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 0.35rem;
+            min-width: 0;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        @media (min-width: 880px) {
+            .hero-kpi-value { font-size: 0.85rem; }
+        }
+        .hero-kpi-value span:last-child {
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .kpi-dot-live {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background-color: var(--emerald);
+            box-shadow: 0 0 8px rgba(16, 185, 129, 0.9);
+            flex-shrink: 0;
+        }
+
+        .report-main-container {
+            max-width: 980px;
+            margin: -3.15rem auto 4.5rem;
+            padding: 0 0.85rem;
+            position: relative;
+            z-index: 10;
+        }
+        @media (min-width: 640px) { .report-main-container { padding: 0 1.25rem; } }
+
+        .article-sheet {
+            background-color: var(--bg-card);
+            border-radius: 20px;
+            padding: 1.4rem 1.05rem;
+            border: 1px solid var(--border-light);
+            box-shadow: 0 16px 40px -14px rgba(15, 23, 42, 0.07);
+        }
+        @media (min-width: 640px) { .article-sheet { padding: 2.2rem 1.75rem; } }
+        @media (min-width: 880px) { .article-sheet { padding: 2.85rem 3.5rem; } }
+
+        /* Bandeau obligatoire YMYL "Not Legal Advice" en haut de chaque rapport */
+        .ymyl-legal-banner {
+            background-color: var(--amber-bg);
+            border: 1px solid var(--amber-border);
+            border-radius: 12px;
+            padding: 0.95rem 1.15rem;
+            margin: 0 0 1.65rem 0;
+            font-size: 0.83rem;
+            line-height: 1.58;
+            color: var(--amber-text);
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+        }
+        .ymyl-legal-banner svg {
+            width: 18px;
+            height: 18px;
+            color: #d97706;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+        .ymyl-legal-banner strong { color: #78350f; font-weight: 800; }
+        .ymyl-legal-banner a { color: #92400e; text-decoration: underline; font-weight: 700; }
+
+        /* =====================================================
+           3. DIV.CTA-ENTERPRISE-CARD (Équilibre exécutif & bouton aéré)
+           ===================================================== */
+        .cta-enterprise-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-dark);
+            border-radius: 16px;
+            box-shadow: 0 10px 28px -10px rgba(15, 23, 42, 0.07);
+            margin: 0 0 2.5rem 0;
+            overflow: hidden;
+            transition: border-color 0.2s ease, box-shadow 0.2s ease;
+        }
+        .cta-enterprise-card:hover {
+            border-color: var(--primary);
+            box-shadow: 0 14px 32px -10px rgba(13, 148, 136, 0.14);
+        }
+        .cta-top-ribbon {
+            background: linear-gradient(90deg, #f0fdfa 0%, #f8fafc 100%);
+            border-bottom: 1px solid var(--border-light);
+            padding: 0.55rem 1.2rem;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 0.5rem;
+        }
+        @media (min-width: 640px) {
+            .cta-top-ribbon { padding: 0.6rem 1.5rem; }
+        }
+        .cta-eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.42rem;
+            font-size: 0.65rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            color: var(--primary-deeper);
+        }
+        .cta-status-dot {
+            width: 6.5px;
+            height: 6.5px;
+            border-radius: 9999px;
+            background-color: var(--emerald);
+            box-shadow: 0 0 6px rgba(16, 185, 129, 0.8);
+            flex-shrink: 0;
+        }
+        .cta-tag-verified {
+            font-size: 0.64rem;
+            font-weight: 700;
+            color: #047857;
+            background-color: var(--emerald-light);
+            border: 1px solid var(--emerald-border);
+            padding: 0.1rem 0.55rem;
+            border-radius: 9999px;
+            white-space: nowrap;
+        }
+
+        .cta-enterprise-body {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+        }
+        .cta-info-group {
+            padding: 1.3rem 1.2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            flex: 1;
+            min-width: 0;
+        }
+        @media (min-width: 640px) {
+            .cta-info-group { padding: 1.5rem 1.55rem; }
+        }
+        .cta-brand-head {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.9rem;
+        }
+        .cta-icon {
+            flex-shrink: 0;
+            width: 44px;
+            height: 44px;
+            margin-top: 2px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-deeper) 100%);
+            color: #ffffff;
+            border-radius: 11px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 10px rgba(13, 148, 136, 0.22);
+        }
+        .cta-icon svg { width: 20px; height: 20px; }
+        .cta-title-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.35rem;
+            flex: 1;
+            min-width: 0;
+        }
+        .cta-title {
+            font-size: 1.2rem;
+            color: var(--text-900);
+            margin: 0;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            line-height: 1.25;
+        }
+        @media (min-width: 640px) {
+            .cta-title { font-size: 1.26rem; }
+        }
+        .cta-desc {
+            font-size: 0.88rem !important;
+            line-height: 1.58 !important;
+            color: var(--text-500) !important;
+            margin: 0 !important;
+        }
+
+        .cta-action-group {
+            background: linear-gradient(180deg, #f8fafc 0%, #f0fdfa 100%);
+            border-top: 1px solid var(--border-light);
+            padding: 1.25rem 1.2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 0.68rem;
+        }
+        .cta-btn-premium {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.48rem;
+            width: 100%;
+            background: linear-gradient(180deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: #ffffff !important;
+            padding: 0.8rem 1.2rem;
+            border-radius: 10px;
+            font-weight: 700;
+            font-size: 0.82rem;
+            line-height: 1.25;
+            text-align: center;
+            border: 1px solid var(--primary-deeper);
+            box-shadow: 0 4px 12px rgba(13, 148, 136, 0.24), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+            white-space: nowrap;
+            transition: all 0.2s ease;
+        }
+        .cta-btn-premium:hover {
+            background: linear-gradient(180deg, var(--primary-dark) 0%, var(--primary-deeper) 100%);
+            transform: translateY(-1px);
+            box-shadow: 0 6px 16px rgba(13, 148, 136, 0.32);
+        }
+        .cta-btn-arrow {
+            flex-shrink: 0;
+            transition: transform 0.2s ease;
+        }
+        .cta-btn-premium:hover .cta-btn-arrow {
+            transform: translateX(3px);
+        }
+        .cta-trust-signals {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.26rem;
+            width: 100%;
+        }
+        .cta-score-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+            font-size: 0.7rem;
+            color: var(--text-700);
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-dark);
+            padding: 0.14rem 0.58rem;
+            border-radius: 6px;
+            white-space: nowrap;
+        }
+        .cta-score-pill svg {
+            width: 11.5px;
+            height: 11.5px;
+            color: var(--primary);
+            flex-shrink: 0;
+        }
+        .trust-text {
+            font-size: 0.67rem;
+            color: var(--text-500);
+            font-weight: 600;
+            text-align: center;
+            white-space: nowrap;
+        }
+
+        .cta-enterprise-footer {
+            background-color: #f8fafc;
+            border-top: 1px solid var(--border-light);
+            padding: 0.75rem 1.2rem;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 0.45rem;
+            font-size: 0.74rem;
+            color: var(--text-700);
+            font-weight: 600;
+        }
+        .cta-feature-item {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.42rem;
+        }
+        .cta-feature-check {
+            width: 17px;
+            height: 17px;
+            border-radius: 5px;
+            background-color: var(--emerald-light);
+            border: 1px solid var(--emerald-border);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+        .cta-feature-check svg {
+            width: 11px;
+            height: 11px;
+            color: var(--emerald);
+        }
+
+        @media (min-width: 640px) {
+            .cta-enterprise-footer {
+                grid-template-columns: repeat(3, auto);
+                justify-content: space-between;
+                padding: 0.75rem 1.55rem;
+            }
+        }
+        @media (min-width: 740px) {
+            .cta-enterprise-body { flex-direction: row; align-items: stretch; }
+            .cta-action-group {
+                flex: 0 0 295px;
+                width: 295px;
+                border-top: none;
+                border-left: 1px solid var(--border-light);
+                padding: 1.35rem 1.3rem;
+            }
+        }
+        @media (min-width: 880px) {
+            .cta-action-group {
+                flex: 0 0 315px;
+                width: 315px;
+                padding: 1.45rem 1.45rem;
+            }
+        }
+
+        /* =====================================================
+           4. TYPOGRAPHIE ARTICLE, BENTO AIDA & TABLEAU COMPARATIF
+           ===================================================== */
+        article h2 {
+            font-size: 1.42rem;
+            line-height: 1.3;
+            margin: 3rem 0 1.1rem 0;
+            padding: 0.12rem 0 0.12rem 0.9rem;
+            border-left: 3.5px solid var(--primary);
+            color: var(--text-900);
+            font-weight: 800;
+            letter-spacing: -0.02em;
+        }
+        article h3 {
+            font-size: 1.12rem;
+            color: var(--text-900);
+            margin: 2.25rem 0 0.8rem 0;
+            font-weight: 700;
+        }
+        article p {
+            font-size: 0.98rem;
+            line-height: 1.75;
+            margin: 0 0 1.25rem 0;
+            color: var(--text-700);
+        }
+        article strong { color: var(--text-900); font-weight: 600; }
+        article hr {
+            border: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent 0%, var(--border-dark) 50%, transparent 100%);
+            margin: 2.5rem 0;
+        }
+
+        /* Blockquote AIDA : Grille Bento 2x2 */
+        article blockquote {
+            margin: 1.35rem 0 2.5rem 0;
+            padding: 1.35rem;
+            background: linear-gradient(180deg, #f8fafc 0%, #f1f5f9 100%);
+            border: 1px solid var(--border-dark);
+            border-radius: 15px;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1rem;
+        }
+        article blockquote::before {
+            content: "EXECUTIVE TECHNICAL BRIEF — VERIFIED VENDOR SPECIFICATIONS";
+            grid-column: 1 / -1;
+            font-size: 0.7rem;
+            font-weight: 800;
+            letter-spacing: 0.08em;
+            color: var(--primary-dark);
+            padding-bottom: 0.6rem;
+            border-bottom: 1px solid var(--border-light);
+        }
+        @media (min-width: 740px) {
+            article blockquote { grid-template-columns: repeat(2, 1fr); gap: 1.05rem; padding: 1.5rem 1.65rem; }
+        }
+        article blockquote p {
+            margin: 0 !important;
+            padding: 1.05rem 1.2rem;
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-light);
+            border-radius: 11px;
+            font-size: 0.9rem !important;
+            line-height: 1.62 !important;
+            color: var(--text-700);
+        }
+        article blockquote p strong {
+            display: inline-block;
+            font-size: 0.7rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            color: var(--primary-dark);
+            background-color: var(--primary-ultra-light);
+            border: 1px solid var(--primary-border);
+            padding: 0.14rem 0.52rem;
+            border-radius: 5px;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Tableau comparatif Decoy à 3 outils réels (Largeurs équilibrées sur 768px et Desktop) */
+        article table {
+            display: block;
+            width: 100%;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            border-collapse: separate;
+            border-spacing: 0;
+            margin: 1.5rem 0 2.25rem 0;
+            border: 1px solid var(--border-dark);
+            border-radius: 13px;
+            background-color: var(--bg-card);
+        }
+        @media (min-width: 880px) {
+            article table { display: table; overflow: hidden; }
+        }
+        article th {
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            background-color: #f1f5f9;
+            padding: 0.8rem 0.95rem;
+            text-align: left;
+            color: var(--text-900);
+            font-weight: 800;
+            font-size: 0.69rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            border-bottom: 1px solid var(--border-dark);
+        }
+        article td {
+            padding: 0.85rem 0.95rem;
+            border-bottom: 1px solid var(--border-light);
+            color: var(--text-700);
+            font-size: 0.84rem;
+            line-height: 1.52;
+            background-color: var(--bg-card);
+            vertical-align: middle;
+        }
+        article td:first-child { font-weight: 700; color: var(--text-900); min-width: 120px; }
+        article td:nth-child(2) { min-width: 135px; }
+        article td:nth-child(3) { min-width: 155px; }
+        article td:nth-child(4) { min-width: 145px; }
+        article td:nth-child(5) { min-width: 145px; }
+        article td:nth-child(6) { min-width: 125px; white-space: nowrap; }
+        article tr:hover td { background-color: var(--bg-body); }
+        article tr:last-child td { border-bottom: none; }
+
+        article td a:not(.vendor-affiliate-link) {
+            display: inline-flex;
+            align-items: center;
+            background-color: var(--primary-ultra-light);
+            color: var(--primary-dark) !important;
+            border: 1px solid var(--primary-border);
+            padding: 0.22rem 0.6rem;
+            border-radius: 6px;
+            font-size: 0.74rem;
+            font-weight: 700;
+            white-space: nowrap;
+            margin-bottom: 0.2rem;
+        }
+        article td a:not(.vendor-affiliate-link):hover {
+            background-color: var(--primary);
+            color: #ffffff !important;
+        }
+        article td em {
+            display: block;
+            font-size: 0.71rem;
+            color: var(--text-500);
+            font-style: normal;
+            white-space: nowrap;
+        }
+
+        article td a.vendor-affiliate-link,
+        article td a.vendor-affiliate-link strong {
+            color: var(--primary-dark) !important;
+            font-weight: 700;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+        }
+
+        /* Sections techniques H4 & Listes d'audit (Zéro débordement horizontal sur 375px/393px/440px) */
+        article h4 {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 0.55rem 0.85rem;
+            font-size: 0.94rem;
+            color: var(--text-900);
+            background: linear-gradient(90deg, #f8fafc 0%, #f1f5f9 100%);
+            border: 1px solid var(--border-dark);
+            border-radius: 11px;
+            padding: 0.78rem 1.05rem;
+            margin: 1.65rem 0 0.85rem 0;
+            font-weight: 800;
+            line-height: 1.4;
+        }
+        article h4 a {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.3rem;
+            font-size: 0.74rem;
+            background-color: var(--primary-ultra-light);
+            border: 1px solid var(--primary-border);
+            padding: 0.2rem 0.62rem;
+            border-radius: 6px;
+            color: var(--primary-dark) !important;
+            font-weight: 700;
+            white-space: nowrap;
+            text-decoration: none !important;
+            transition: all 0.18s ease;
+        }
+        article h4 a:hover {
+            background-color: var(--primary);
+            border-color: var(--primary-dark);
+            color: #ffffff !important;
+        }
+        article ul {
+            list-style: none;
+            margin: 0.45rem 0 2rem 0.65rem;
+            padding: 0.2rem 0 0.2rem 1.3rem;
+            border-left: 2px solid var(--primary-light);
+            max-width: 100%;
+        }
+        @media (max-width: 639px) {
+            article ul {
+                margin-left: 0.35rem;
+                padding-left: 0.95rem;
+            }
+        }
+        article ul li {
+            position: relative;
+            margin-bottom: 0.75rem;
+            font-size: 0.89rem;
+            line-height: 1.64;
+            color: var(--text-700);
+            background-color: var(--bg-body);
+            padding: 0.78rem 1rem;
+            border: 1px solid var(--border-light);
+            border-radius: 10px;
+            max-width: 100%;
+            min-width: 0;
+            overflow-wrap: anywhere;
+            word-break: break-word;
+        }
+        article ul li::before {
+            content: '';
+            position: absolute;
+            left: -1.76rem;
+            top: 1.02rem;
+            width: 9px;
+            height: 9px;
+            border-radius: 9999px;
+            background-color: var(--bg-card);
+            border: 2px solid var(--primary);
+        }
+        @media (max-width: 639px) {
+            article ul li::before {
+                left: -1.41rem;
+            }
+        }
+        article code {
+            font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+            font-size: 0.74rem;
+            font-weight: 600;
+            color: var(--text-800);
+            background-color: #f1f5f9;
+            border: 1px solid var(--border-dark);
+            padding: 0.1rem 0.4rem;
+            border-radius: 5px;
+            white-space: normal;
+            overflow-wrap: anywhere;
+            word-break: break-word;
+            max-width: 100%;
+            box-decoration-break: clone;
+            -webkit-box-decoration-break: clone;
+        }
+        /* Les étiquettes de catégorie en début de puce ([COMPONENT], [ROUTING], [CSP HEADER]) gardent la couleur Deep Teal */
+        article ul li strong code {
+            font-size: 0.7rem;
+            font-weight: 800;
+            color: var(--primary-dark);
+            background-color: var(--primary-ultra-light);
+            border: 1px solid var(--primary-border);
+            padding: 0.12rem 0.48rem;
+            border-radius: 5px;
+            white-space: nowrap;
+        }
+
+        /* =====================================================
+           5. SECTION.SOURCES-ATTRIBUTION-PANEL (Panneau exécutif à en-tête)
+           ===================================================== */
+        .sources-attribution-panel {
+            margin: 2.75rem 0;
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-dark);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 6px 20px -8px rgba(15, 23, 42, 0.05);
+        }
+        .sap-header {
+            background: linear-gradient(90deg, #f8fafc 0%, #f1f5f9 100%);
+            border-bottom: 1px solid var(--border-light);
+            padding: 0.95rem 1.25rem;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 0.65rem;
+        }
+        @media (min-width: 640px) {
+            .sap-header { padding: 1rem 1.5rem; }
+        }
+        .sap-header-left {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.55rem;
+        }
+        .sap-header-icon {
+            width: 28px;
+            height: 28px;
+            border-radius: 7px;
+            background-color: var(--primary-ultra-light);
+            border: 1px solid var(--primary-border);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+            flex-shrink: 0;
+        }
+        .sap-header-icon svg { width: 15px; height: 15px; }
+        .sap-header-title {
+            font-size: 0.73rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.07em;
+            color: var(--text-900);
+        }
+        .sap-verif-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.38rem;
+            font-size: 0.68rem;
+            font-weight: 700;
+            color: #047857;
+            background-color: var(--emerald-light);
+            border: 1px solid var(--emerald-border);
+            padding: 0.16rem 0.62rem;
+            border-radius: 9999px;
+            white-space: nowrap;
+        }
+        .sap-verif-dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background-color: var(--emerald);
+        }
+        .sap-body {
+            padding: 1.25rem;
+        }
+        @media (min-width: 640px) {
+            .sap-body { padding: 1.5rem; }
+        }
+        .sap-sources-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 0.85rem;
+            margin-bottom: 1.1rem;
+        }
+        @media (min-width: 640px) {
+            .sap-sources-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.95rem; }
+        }
+        .sap-source-card {
+            background-color: #f8fafc;
+            border: 1px solid var(--border-light);
+            border-radius: 12px;
+            padding: 0.95rem 1.1rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            gap: 0.65rem;
+            transition: border-color 0.2s ease, background-color 0.2s ease;
+        }
+        .sap-source-card:hover {
+            background-color: #ffffff;
+            border-color: var(--primary-border);
+        }
+        .sap-source-top {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 0.6rem;
+        }
+        .sap-source-name {
+            font-size: 0.87rem;
+            line-height: 1.35;
+            color: var(--text-900);
+            font-weight: 800;
+        }
+        .sap-source-date {
+            font-family: ui-monospace, SFMono-Regular, monospace;
+            font-size: 0.67rem;
+            font-weight: 600;
+            color: var(--text-500);
+            background-color: #ffffff;
+            border: 1px solid var(--border-light);
+            padding: 0.12rem 0.48rem;
+            border-radius: 6px;
+            white-space: nowrap;
+            flex-shrink: 0;
+        }
+        .sap-source-footer {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 0.45rem;
+            padding-top: 0.5rem;
+            border-top: 1px dashed var(--border-light);
+        }
+        .sap-doc-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+            font-size: 0.74rem;
+            font-weight: 700;
+            color: var(--primary-dark) !important;
+            background-color: var(--primary-ultra-light);
+            border: 1px solid var(--primary-border);
+            padding: 0.22rem 0.6rem;
+            border-radius: 6px;
+            outline: none;
+            transition: all 0.18s ease;
+            white-space: nowrap;
+        }
+        .sap-doc-btn svg {
+            width: 11.5px;
+            height: 11.5px;
+            flex-shrink: 0;
+        }
+        .sap-doc-btn:hover {
+            background-color: var(--primary);
+            border-color: var(--primary-dark);
+            color: #ffffff !important;
+        }
+        .sap-caution-pill {
+            font-size: 0.65rem;
+            font-weight: 700;
+            color: var(--amber-text);
+            background-color: var(--amber-bg);
+            border: 1px solid var(--amber-border);
+            padding: 0.14rem 0.48rem;
+            border-radius: 6px;
+            white-space: nowrap;
+        }
+        .sap-pricing-notice {
+            background-color: #f8fafc;
+            border: 1px solid var(--border-light);
+            border-radius: 11px;
+            padding: 0.85rem 1rem;
+            font-size: 0.79rem;
+            line-height: 1.58;
+            color: var(--text-700);
+            display: flex;
+            align-items: flex-start;
+            gap: 0.68rem;
+        }
+        .sap-pricing-icon {
+            width: 24px;
+            height: 24px;
+            border-radius: 6px;
+            background-color: var(--primary-ultra-light);
+            border: 1px solid var(--primary-border);
+            color: var(--primary);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            margin-top: 1px;
+        }
+        .sap-pricing-icon svg { width: 13.5px; height: 13.5px; }
+        .sap-pricing-text code {
+            font-size: 0.71rem;
+            padding: 0.06rem 0.36rem;
+        }
+        .sap-license-box {
+            margin-top: 0.95rem;
+            background-color: var(--primary-ultra-light);
+            border: 1px solid var(--primary-border);
+            border-radius: 11px;
+            padding: 0.95rem 1.1rem;
+        }
+        .sap-license-title {
+            display: flex;
+            align-items: center;
+            gap: 0.45rem;
+            font-size: 0.72rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--primary-deeper);
+            margin-bottom: 0.55rem;
+        }
+        .sap-license-title svg { width: 15px; height: 15px; color: var(--primary-dark); flex-shrink: 0; }
+        .sap-license-list {
+            margin: 0 !important;
+            padding: 0 0 0 1.1rem !important;
+            border-left: none !important;
+            list-style: disc !important;
+        }
+        .sap-license-list li {
+            background: transparent !important;
+            border: none !important;
+            padding: 0.2rem 0 !important;
+            margin-bottom: 0.3rem !important;
+            font-size: 0.8rem !important;
+            color: var(--text-800) !important;
+        }
+        .sap-license-list li::before { display: none !important; }
+
+        /* =====================================================
+           6. SECTION.METHODOLOGY-STRIP (Panneau unifié 3 colonnes)
+           ===================================================== */
+        .methodology-strip {
+            margin: 2.5rem 0;
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-dark);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 6px 20px -8px rgba(15, 23, 42, 0.05);
+        }
+        .methodology-strip-header {
+            background: linear-gradient(90deg, #f8fafc 0%, #f1f5f9 100%);
+            border-bottom: 1px solid var(--border-light);
+            padding: 0.95rem 1.25rem;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 0.65rem;
+        }
+        @media (min-width: 640px) {
+            .methodology-strip-header { padding: 1rem 1.5rem; }
+        }
+        .methodology-strip-header-left {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.55rem;
+            font-size: 0.73rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.07em;
+            color: var(--text-900);
+        }
+        .methodology-header-icon {
+            width: 28px;
+            height: 28px;
+            border-radius: 7px;
+            background-color: var(--primary-ultra-light);
+            border: 1px solid var(--primary-border);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+            flex-shrink: 0;
+        }
+        .methodology-header-icon svg { width: 15px; height: 15px; }
+        .methodology-verified-pill {
+            font-size: 0.68rem;
+            font-weight: 700;
+            color: #047857;
+            background-color: var(--emerald-light);
+            border: 1px solid var(--emerald-border);
+            padding: 0.16rem 0.62rem;
+            border-radius: 9999px;
+            white-space: nowrap;
+        }
+        .methodology-grid {
+            padding: 1.25rem;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1rem;
+        }
+        @media (min-width: 640px) {
+            .methodology-grid { padding: 1.5rem; }
+        }
+        @media (min-width: 740px) {
+            .methodology-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.05rem; }
+        }
+        .methodology-card {
+            background-color: #f8fafc;
+            border: 1px solid var(--border-light);
+            border-radius: 12px;
+            padding: 1.15rem 1.2rem;
+            transition: transform 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
+            display: flex;
+            flex-direction: column;
+        }
+        .methodology-card:hover {
+            transform: translateY(-2px);
+            background-color: #ffffff;
+            border-color: var(--primary-border);
+        }
+        .methodology-card-head {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 0.75rem;
+        }
+        .methodology-icon-box {
+            width: 34px;
+            height: 34px;
+            background: linear-gradient(135deg, var(--primary-ultra-light) 0%, var(--primary-light) 100%);
+            color: var(--primary);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid var(--primary-border);
+            flex-shrink: 0;
+        }
+        .methodology-icon-box svg {
+            width: 16px;
+            height: 16px;
+            stroke-width: 2;
+            fill: none;
+            stroke: currentColor;
+        }
+        .methodology-step-num {
+            font-family: ui-monospace, SFMono-Regular, monospace;
+            font-size: 0.66rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+            background-color: #ffffff;
+            border: 1px solid var(--border-light);
+            padding: 0.1rem 0.44rem;
+            border-radius: 5px;
+            white-space: nowrap;
+        }
+        .methodology-card h4 {
+            margin: 0 0 0.4rem 0 !important;
+            padding: 0 !important;
+            border: none !important;
+            background: transparent !important;
+            font-size: 0.92rem !important;
+            font-weight: 800 !important;
+            color: var(--text-900) !important;
+            letter-spacing: -0.015em;
+            line-height: 1.3;
+        }
+        .methodology-card p {
+            margin: 0 !important;
+            font-size: 0.81rem !important;
+            line-height: 1.56 !important;
+            color: var(--text-500) !important;
+        }
+        .methodology-card p code {
+            font-size: 0.7rem;
+            font-weight: 600;
+            color: var(--text-800);
+            background-color: #ffffff;
+            border-color: var(--border-dark);
+            padding: 0.05rem 0.35rem;
+        }
+
+        /* =====================================================
+           7. DIV.DISCLOSURE-GLOBAL (Barre FTC symétrique)
+           ===================================================== */
+        .disclosure-global {
+            background-color: #f8fafc;
+            border: 1px solid var(--border-dark);
+            border-radius: 14px;
+            padding: 1rem 1.25rem;
+            font-size: 0.81rem;
+            margin: 2rem 0 0 0;
+            line-height: 1.58;
+            color: var(--text-500);
+            display: flex;
+            gap: 0.85rem;
+            align-items: flex-start;
+        }
+        .disclosure-icon-badge {
+            width: 30px;
+            height: 30px;
+            border-radius: 8px;
+            background-color: var(--primary-ultra-light);
+            border: 1px solid var(--primary-border);
+            color: var(--primary);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+        .disclosure-icon-badge svg { width: 15px; height: 15px; }
+        .disclosure-body { flex: 1; min-width: 0; }
+        .disclosure-eyebrow {
+            display: inline-block;
+            font-size: 0.66rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            color: var(--text-900);
+            margin-bottom: 0.18rem;
+        }
+        .disclosure-body p {
+            margin: 0 !important;
+            font-size: 0.8rem !important;
+            line-height: 1.56 !important;
+            color: var(--text-500) !important;
+        }
+        .disclosure-body code {
+            font-size: 0.7rem;
+            font-weight: 600;
+            color: var(--text-800);
+            background-color: #ffffff;
+            border: 1px solid var(--border-dark);
+            padding: 0.05rem 0.36rem;
+        }
+    </style>
+</head>
+<body>
+    <header class="site-header">
+        <div class="nav-inner">
+            <a href="/" class="site-brand">
+                <span class="brand-mark" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><path d="m9 12 2 2 4-4"></path></svg>
+                </span>
+                <span>{{ .Site.Title }}</span>
+            </a>
+            <nav class="nav-links" aria-label="Primary Navigation">
+                <a href="/" class="nav-audit-pill">Technical Audits</a>
+                <a href="/legal/methodology/" class="nav-desktop-only">Methodology</a>
+                <a href="/legal/disclaimer/" class="nav-desktop-only">Disclaimer</a>
+                <a href="/legal/privacy/" class="nav-desktop-only">Privacy &amp; FTC</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="report-hero">
+        <div class="report-hero-inner">
+            <div class="report-breadcrumb" aria-label="Breadcrumb">
+                <a href="/" class="report-breadcrumb-home">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                    <span>Technical Audit</span>
+                </a>
+                <span class="report-breadcrumb-sep" aria-hidden="true">/</span>
+                <span class="report-breadcrumb-topic">{{ .Params.keyword | default "Cookieless Telemetry" }}</span>
+            </div>
+
+            <h1>{{ .Title }}</h1>
+
+            <div class="meta-group">
+                <div class="meta-pill">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                    <span>Specs Last Verified: {{ .Params.last_verified | default (.Lastmod.Format "2006-01-02") }}</span>
+                </div>
+                {{ with .Params.official_source_url }}
+                <div class="meta-pill">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                    <span>Primary Source: <a href="{{ . }}" target="_blank" rel="noopener noreferrer">Official Vendor Docs</a></span>
+                </div>
+                {{ end }}
+                <div class="meta-pill">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+                    <span>Not Legal Advice</span>
+                </div>
+            </div>
+
+            <div class="hero-kpi-grid">
+                <div class="hero-kpi-card">
+                    <span class="hero-kpi-label">Verification Status</span>
+                    <span class="hero-kpi-value"><span class="kpi-dot-live"></span><span>{{ .Params.last_verified | default "Verified" }}</span></span>
+                </div>
+                <div class="hero-kpi-card">
+                    <span class="hero-kpi-label">Audit Focus</span>
+                    <span class="hero-kpi-value"><span>{{ .Params.keyword | default "Privacy Analytics" }}</span></span>
+                </div>
+                <div class="hero-kpi-card">
+                    <span class="hero-kpi-label">Compared Solutions</span>
+                    <span class="hero-kpi-value"><span>{{ .Params.compared_tools_count | default 3 }} Real Tools</span></span>
+                </div>
+                <div class="hero-kpi-card">
+                    <span class="hero-kpi-label">Evaluated Option</span>
+                    <span class="hero-kpi-value"><span>{{ .Params.outil_cible | default "Simple Analytics" }}</span></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <main class="report-main-container">
+        <div class="article-sheet">
+            <article>
+                <!-- Bandeau d'avertissement YMYL obligatoire et visible -->
+                <div class="ymyl-legal-banner" role="note">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+                    <div>
+                        <strong>Not Legal Advice (Technical Specification Audit Only):</strong> This page summarizes technical documentation published by software vendors and data protection authorities (last verified on <strong>{{ .Params.last_verified | default "2026-10-27" }}</strong>). It does not constitute legal advice or a compliance guarantee. Read our <a href="/legal/disclaimer/">Legal Disclaimer</a> and <a href="/legal/methodology/">Verification Methodology</a>, and consult qualified legal counsel or your DPO.
+                    </div>
+                </div>
+
+                <!-- UNIQUE CTA AFFILIÉ DE LA PAGE -->
+                {{ partial "cta.html" . }}
+
+                <!-- Contenu Markdown AIDA + Tableau comparatif Decoy à 3 outils réels -->
+                {{ .Content }}
+
+                <!-- Bloc réutilisable : Sources & Last Verified + Mention Prix/TVA + Licences EDPB/CNIL -->
+                {{ partial "attribution.html" . }}
+
+                <!-- Bandeau de Méthodologie E-E-A-T A3 -->
+                <section class="methodology-strip" aria-label="Verification Methodology">
+                    <div class="methodology-strip-header">
+                        <span class="methodology-strip-header-left">
+                            <span class="methodology-header-icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><path d="m9 12 2 2 4-4"></path></svg>
+                            </span>
+                            <span>YMYL Data Integrity &amp; License Compliance Methodology</span>
+                        </span>
+                        <span class="methodology-verified-pill">90-Day Quality Gate</span>
+                    </div>
+                    <div class="methodology-grid">
+                        <div class="methodology-card">
+                            <div class="methodology-card-head">
+                                <div class="methodology-icon-box" aria-hidden="true">
+                                    <svg viewBox="0 0 24 24"><ellipse cx="12" cy="5" rx="9" ry="3"></ellipse><path d="M3 5V19A9 3 0 0 0 21 19V5"></path><path d="M3 12A9 3 0 0 0 21 12"></path></svg>
+                                </div>
+                                <span class="methodology-step-num">01 / PRIMARY DOCS</span>
+                            </div>
+                            <h4>Official Vendor Docs</h4>
+                            <p>Every specification in our comparison matrix links directly to the software vendor's primary technical documentation and security whitepapers.</p>
+                        </div>
+                        <div class="methodology-card">
+                            <div class="methodology-card-head">
+                                <div class="methodology-icon-box" aria-hidden="true">
+                                    <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                                </div>
+                                <span class="methodology-step-num">02 / FRESHNESS GATE</span>
+                            </div>
+                            <h4>90-Day Freshness Gate</h4>
+                            <p>Reports whose underlying technical specifications exceed 90 days without human re-verification are automatically removed from search indexing.</p>
+                        </div>
+                        <div class="methodology-card">
+                            <div class="methodology-card-head">
+                                <div class="methodology-icon-box" aria-hidden="true">
+                                    <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><path d="m9 12 2 2 4-4"></path></svg>
+                                </div>
+                                <span class="methodology-step-num">03 / REUSE LICENSES</span>
+                            </div>
+                            <h4>Strict License Attribution</h4>
+                            <p>Institutional publications from the EDPB and CNIL are syndicated with unmodified titles and explicit CC-BY-ND 4.0 FR / EDPB attributions.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Divulgation FTC & YMYL Globale -->
+                <div class="disclosure-global" role="note">
+                    <span class="disclosure-icon-badge" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+                    </span>
+                    <div class="disclosure-body">
+                        <span class="disclosure-eyebrow">FTC Affiliate &amp; Editorial Disclosure</span>
+                        <p>
+                            We may earn a referral commission if you subscribe to a software vendor through our clearly disclosed partner referral links, at no extra cost to you. All specifications are reported as documented by the vendor on <strong style="color: var(--text-900);">{{ .Params.last_verified | default "2026-10-27" }}</strong>; prices and tax/VAT treatment may vary.
+                        </p>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </main>
+
+    {{ partial "footer.html" . }}
+</body>
+</html>
+
+
+
+
+

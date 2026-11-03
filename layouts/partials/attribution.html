@@ -1,0 +1,105 @@
+<!-- Chemin exact : layouts/partials/attribution.html -->
+{{ $verifDate := .Params.last_verified | default (.Lastmod.Format "2006-01-02") }}
+<section class="sources-attribution-panel" aria-label="Primary Sources, Pricing Disclaimer, and License Attributions">
+    <div class="sap-header">
+        <div class="sap-header-left">
+            <span class="sap-header-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                    <polyline points="14 2 14 8 20 8"></polyline>
+                    <line x1="16" y1="13" x2="8" y2="13"></line>
+                    <line x1="16" y1="17" x2="8" y2="17"></line>
+                </svg>
+            </span>
+            <span class="sap-header-title">Sources &amp; Last Verified Audit Trail</span>
+        </div>
+        <span class="sap-verif-badge">
+            <span class="sap-verif-dot" aria-hidden="true"></span>
+            <span>Specs Verified: {{ $verifDate }}</span>
+        </span>
+    </div>
+
+    <div class="sap-body">
+        <!-- 1. Grille structurée des sources primaires officielles -->
+        {{ with .Params.sources_list }}
+        <div class="sap-sources-grid">
+            {{ range . }}
+            <div class="sap-source-card">
+                <div class="sap-source-top">
+                    <strong class="sap-source-name">{{ .name }}</strong>
+                    <span class="sap-source-date">Verified: {{ .last_verified }}</span>
+                </div>
+                <div class="sap-source-footer">
+                    {{ if .url }}
+                    <a href="{{ .url }}" class="sap-doc-btn" target="_blank" rel="noopener noreferrer">
+                        <span>Official Primary Docs</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                    </a>
+                    {{ end }}
+                    {{ if .ambiguous_fields }}
+                    <span class="sap-caution-pill" title="One or more secondary fields (such as VAT inclusion on the pricing page or retention ceiling) are not explicitly stated on the primary page and use a prudent 'See vendor page' notice.">
+                        Prudent Pricing / Retention Notice
+                    </span>
+                    {{ end }}
+                </div>
+            </div>
+            {{ end }}
+        </div>
+        {{ else }}
+        <div class="sap-sources-grid">
+            <div class="sap-source-card">
+                <div class="sap-source-top">
+                    <strong class="sap-source-name">{{ .Params.outil_cible | default "Evaluated Software Specification" }}</strong>
+                    <span class="sap-source-date">Verified: {{ $verifDate }}</span>
+                </div>
+                {{ with .Params.official_source_url }}
+                <div class="sap-source-footer">
+                    <a href="{{ . }}" class="sap-doc-btn" target="_blank" rel="noopener noreferrer">
+                        <span>Official Primary Docs</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                    </a>
+                </div>
+                {{ end }}
+            </div>
+        </div>
+        {{ end }}
+
+        <!-- 2. Mention unique sur les prix et le traitement de la TVA -->
+        <div class="sap-pricing-notice" role="note">
+            <span class="sap-pricing-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <line x1="12" y1="8" x2="12" y2="12"></line>
+                    <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                </svg>
+            </span>
+            <div class="sap-pricing-text">
+                <strong>Pricing &amp; Tax Notice:</strong> Prices as of <strong>{{ $verifDate }}</strong>, tax treatment may vary by jurisdiction at checkout. Where a starting price states "See vendor pricing page", VAT inclusion/exclusion or multi-currency equivalence was not explicitly stated on the vendor's primary pricing page.
+            </div>
+        </div>
+
+        <!-- 3. Bloc d'attribution des licences publiques (EDPB Legal Notice & CNIL CC-BY-ND 4.0 FR) -->
+        {{ with .Params.attributions_list }}
+        <div class="sap-license-box">
+            <div class="sap-license-title">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                </svg>
+                <span>Mandatory Institutional Reuse &amp; License Attributions (Zero Text Modification)</span>
+            </div>
+            <ul class="sap-license-list">
+                {{ range . }}
+                <li>
+                    <strong>{{ .authority_name }}:</strong> {{ .attribution_text }}
+                    {{ if .license_url }}
+                    &mdash; <a href="{{ .license_url }}" target="_blank" rel="noopener noreferrer">{{ .license }}</a>
+                    {{ end }}
+                </li>
+                {{ end }}
+            </ul>
+        </div>
+        {{ end }}
+    </div>
+</section>
+
+

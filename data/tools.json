@@ -1,0 +1,128 @@
+{
+  "_comment": "Chemin exact : data/tools.json",
+  "_avertissement": "Données vérifiées sur sources primaires le 2026-10-27. Les champs dont une composante (ex: mention TVA sur la page tarifaire, conflit de devises ou plafond de rétention) n'est pas explicite dans la documentation primaire sont à null avec _a_verifier: true. Aucun avis juridique (YMYL).",
+  "metadata": {
+    "schema_version": "1.0",
+    "freshness_threshold_days": 90
+  },
+  "tools": [
+    {
+      "_a_verifier": true,
+      "_notes_a_verifier": {
+        "starting_price": "Free plan at $0 (1 user, 5 sites, 30-day history); Paid plans from $20/month (100k pageviews, 1 user included, +$20/month per additional user, monthly or annual billing with 2 months free; VAT treatment not stated on the pricing page — [À VÉRIFIER sur https://www.simpleanalytics.com/pricing])",
+        "data_retention_paid_detail": "Verify exact year cap per paid tier via 'Compare all features' on https://www.simpleanalytics.com/pricing"
+      },
+      "id": "simple-analytics",
+      "name": "Simple Analytics",
+      "role": "target_affiliate",
+      "category": "Cookieless Web Analytics",
+      "cookies_by_default": "No (Never sets cookies, localStorage, or sessionStorage according to vendor documentation)",
+      "ip_handling": "Not collected or stored; IP addresses are dropped on every request and replaced with zeros (0.0.0.0) via mmanon in error logs (per vendor docs)",
+      "server_region": "European Union (Netherlands via Worldstream and Leaseweb Dutch servers; Bunny CDN via BunnyWay in Slovenia, EU)",
+      "data_retention": "30 days on the Free plan (older data auto-deleted); on paid plans, encrypted data is retained per subscription tier while account is active and permanently deleted 90 days after account deletion (per vendor docs)",
+      "hosting_options": "Managed EU Cloud",
+      "starting_price": null,
+      "best_for": "SaaS & E-commerce teams seeking lightweight EU-hosted cookieless telemetry",
+      "vendor_claim_summary": "According to Simple Analytics' official documentation, the script measures pageviews, events, and time-zone country without setting cookies, fingerprinting devices, or storing IP addresses.",
+      "source_url": "https://docs.simpleanalytics.com/data-security-and-ownership",
+      "last_verified": "2026-10-27"
+    },
+    {
+      "id": "plausible-analytics",
+      "name": "Plausible Analytics",
+      "role": "direct_alternative",
+      "category": "Open-Source Privacy Web Analytics",
+      "cookies_by_default": "No (No cookies, browser cache, or localStorage used according to vendor documentation)",
+      "ip_handling": "Transiently processed with User-Agent, domain, and a daily rotating salt (hash(daily_salt + website_domain + ip_address + user_agent)); raw IP is never written to disk or logs (per vendor docs)",
+      "server_region": "European Union (Hetzner servers in Falkenstein, Germany; UpCloud in Finland for databases/exports; Bunny CDN in Slovenia)",
+      "data_retention": "No retention limit on Starter, Growth, and Business plans until user deletes site or account; daily cryptographic salt is rotated and deleted every 24 hours; encrypted backups kept for 30 days (per vendor docs)",
+      "hosting_options": "Managed EU Cloud or Self-Hosted (Docker / AGPLv3 Community Edition)",
+      "starting_price": "Starter plan at $9/month (USD, up to 10k monthly pageviews, monthly or annual billing with 2 months free; VAT excluded and calculated at checkout by Paddle, verified 2026-10-27)",
+      "best_for": "Developers wanting open-source transparency or custom event tracking",
+      "vendor_claim_summary": "According to Plausible Analytics' official data policy and EU hosting documentation, visitor uniqueness is estimated via a 24-hour salted hash without cookies, and all data stays on European-owned servers.",
+      "source_url": "https://plausible.io/data-policy",
+      "last_verified": "2026-10-27"
+    },
+    {
+      "_a_verifier": true,
+      "_notes_a_verifier": {
+        "data_retention": "Daily salt rotates at midnight UTC, but SHA-256 visitor signatures of past events remain stored in the database after midnight UTC and no maximum purge period for aggregate stats is specified in /data — [À VÉRIFIER sur https://usefathom.com/data]",
+        "starting_price": "From $15/month (USD, up to 100,000 monthly pageviews and up to 50 sites included, monthly or annual billing with 2 months free; VAT treatment not stated on the pricing page — [À VÉRIFIER sur https://usefathom.com/pricing])"
+      },
+      "id": "fathom-analytics",
+      "name": "Fathom Analytics",
+      "role": "direct_alternative",
+      "category": "Privacy-Focused Cloud Analytics",
+      "cookies_by_default": "No (No tracking cookies used according to vendor documentation)",
+      "ip_handling": "Combined with User-Agent, site ID, and a daily salt (rotating at midnight UTC) to create a SHA-256 visitor signature; EU visitor IPs are stripped on EU servers before forwarding, while detected bot records store raw IPs (per vendor docs)",
+      "server_region": "EU Data Isolation proxy servers in Germany (Falkenstein, Nuremberg) and Finland (Helsinki) for EU/EEA/UK/CH initial anonymization; Bunny.net CDN; main analytics database storage on US infrastructure (per vendor docs)",
+      "data_retention": null,
+      "hosting_options": "Managed Cloud with EU Data Isolation (or Extreme EU Isolation via cdn-eu.usefathom.com)",
+      "starting_price": null,
+      "best_for": "Agencies and content sites needing built-in uptime checks and EU routing",
+      "vendor_claim_summary": "According to Fathom Analytics' technical data documentation, EU traffic is anonymized on European servers before anonymized event records and SHA-256 visitor signatures are stored on US infrastructure.",
+      "source_url": "https://usefathom.com/data",
+      "last_verified": "2026-10-27"
+    },
+    {
+      "_a_verifier": true,
+      "_notes_a_verifier": {
+        "starting_price": "Business plan from €36/month (EUR, up to 2M monthly actions and 20 domains); Enterprise from $25,000/year; Healthcare Enterprise from $30,000/year (VAT treatment not stated on the pricing page — [À VÉRIFIER sur https://piwik.pro/business-plan/ et https://piwik.pro/pricing/])"
+      },
+      "id": "piwik-pro",
+      "name": "Piwik PRO Analytics Suite",
+      "role": "enterprise_decoy",
+      "category": "Enterprise Analytics & Consent Manager",
+      "cookies_by_default": "Configurable (First-party visitor cookies enabled by default; can be disabled or set to 30-minute cookies, 30-minute session hashes, or strict cookieless mode per vendor docs)",
+      "ip_handling": "Configurable IP masking in Administration > Privacy removes 1, 2, or 3 bytes from the visitor IP address prior to database storage (per vendor docs)",
+      "server_region": "60+ locations including Azure Cloud (Germany, Netherlands, United States, Hong Kong) and Elastx servers (Sweden) across Public or Private Cloud (per vendor docs)",
+      "data_retention": "25 months on the Business plan; 25+ months on Enterprise and Healthcare Enterprise plans (per vendor docs)",
+      "hosting_options": "Managed Public Cloud or Enterprise Private Cloud (Dedicated Database or Dedicated Hardware)",
+      "starting_price": null,
+      "best_for": "Large enterprises and healthcare/government teams requiring integrated Consent Management (CMP)",
+      "vendor_claim_summary": "According to Piwik PRO's privacy documentation, the suite pairs web analytics with a built-in consent manager, configurable IP byte masking, and optional 30-minute session hashes.",
+      "source_url": "https://piwik.pro/privacy-security/",
+      "last_verified": "2026-10-27"
+    },
+    {
+      "_a_verifier": true,
+      "_notes_a_verifier": {
+        "starting_price": "Matomo On-Premise Community is Free (€0 forever; Team bundle from €275/month or €230/month billed annually); Matomo Cloud Business displays two different entry amounts on matomo.org/pricing/ depending on currency/table (USD 26/month excl. tax vs EUR 29/month excl. tax for 50,000 monthly hits, annual billing gives 2 months free — [À VÉRIFIER sur https://matomo.org/pricing/])"
+      },
+      "id": "matomo-analytics",
+      "name": "Matomo Analytics",
+      "role": "enterprise_decoy",
+      "category": "Full-Featured Open-Source Web Analytics",
+      "cookies_by_default": "Configurable (First-party cookies enabled by default with a 13-month cap in CNIL mode; cookieless tracking and opt-out supported per vendor docs)",
+      "ip_handling": "In-memory IP anonymization enabled by default (2 bytes masked by default); configurable to mask 1, 2, 3, or all 4 bytes (0.0.0.0) for IPv4/IPv6 before database storage (per vendor docs)",
+      "server_region": "European Union (Frankfurt, Germany for Matomo Cloud) or User-Controlled On-Premise server location (per vendor docs)",
+      "data_retention": "Matomo Cloud Business retains raw visit logs for up to 24 months (capped at 759 days in CNIL compliance mode) and aggregated reports forever; Matomo On-Premise retention is fully configurable by the administrator (per vendor docs)",
+      "hosting_options": "Managed EU Cloud or Self-Hosted On-Premise (PHP/MySQL)",
+      "starting_price": null,
+      "best_for": "Organizations needing full raw log ownership on their own MySQL servers",
+      "vendor_claim_summary": "According to Matomo's official documentation, administrators can enforce CNIL consent-exemption settings, disable cookies, and mask IP addresses in memory before storage.",
+      "source_url": "https://matomo.org/faq/general/configure-privacy-settings-in-matomo/",
+      "last_verified": "2026-10-27"
+    },
+    {
+      "_a_verifier": true,
+      "_notes_a_verifier": {
+        "starting_price": "GA4 Standard is Free ($0); Google Analytics 360 enterprise tier is available by custom contract quote only without public pricing in official Google documentation — [À VÉRIFIER sur https://support.google.com/analytics/answer/10000067]"
+      },
+      "id": "google-analytics-4",
+      "name": "Google Analytics 4 (GA4)",
+      "role": "legacy_baseline",
+      "category": "Traditional Behavioral & Ad-Tech Analytics",
+      "cookies_by_default": "Yes (Writes first-party _ga cookies when consent is granted; sends cookieless pings when consent is denied in Advanced Consent Mode per Google docs)",
+      "ip_handling": "According to Google documentation, individual IP addresses are not logged or stored; for EU, UK, and Switzerland traffic, IPs are used on regional servers solely for coarse geolocation lookup and immediately deleted before logging",
+      "server_region": "Regional EU, UK, and Switzerland collection domains and servers for initial IP lookup and collection, followed by traffic transfer to Google Analytics processing servers (per Google docs)",
+      "data_retention": "2 months or 14 months for user-level and event-level data in GA4 Standard (26, 38, or 50 months in GA360; capped at 2 months for Large/XL properties and demographic data); applies to Explorations and Funnel reports only (per Google docs)",
+      "hosting_options": "Google Cloud (Proprietary SaaS)",
+      "starting_price": null,
+      "best_for": "Marketing teams heavily reliant on Google Ads bidding and complex consent banners",
+      "vendor_claim_summary": "According to Google's official documentation, GA4 collects EU visitor traffic through regional EU servers to discard IP addresses before processing and relies on Consent Mode signals in the EEA.",
+      "source_url": "https://support.google.com/analytics/answer/12017362",
+      "last_verified": "2026-10-27"
+    }
+  ]
+}

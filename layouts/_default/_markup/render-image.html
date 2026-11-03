@@ -1,0 +1,53 @@
+<!-- Chemin exact : layouts/_default/_markup/render-image.html -->
+{{- $alt := .Text | default "Privacy Analytics Architecture Diagram" -}}
+{{- $caption := .Title -}}
+{{- $figClass := index .Attributes "class" | default "telemetry-figure" -}}
+
+{{- $image := false -}}
+{{- with .PageInner -}}
+  {{- $image = .Resources.GetMatch $.Destination -}}
+{{- else -}}
+  {{- $image = .Page.Resources.GetMatch .Destination -}}
+{{- end -}}
+
+{{- if not $image -}}
+  {{- $image = resources.Get (strings.TrimPrefix "/" .Destination) -}}
+{{- end -}}
+
+<figure class="{{ $figClass }}" style="margin: 2.25rem 0; background-color: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 0.75rem; box-shadow: 0 2px 6px rgba(15, 23, 42, 0.04);">
+  {{- if and $image (ne $image.MediaType.SubType "svg") -}}
+    {{- $image_webp := $image.Resize "800x webp q85" -}}
+    <picture>
+      <source srcset="{{ $image_webp.RelPermalink }}" type="image/webp">
+      <img src="{{ $image.RelPermalink }}"
+           alt="{{ $alt }}"
+           loading="lazy"
+           decoding="async"
+           width="{{ $image.Width }}"
+           height="{{ $image.Height }}"
+           style="display: block; width: 100%; max-width: 100%; height: auto; border-radius: 8px;">
+    </picture>
+  {{- else if $image -}}
+    <img src="{{ $image.RelPermalink }}"
+         alt="{{ $alt }}"
+         loading="lazy"
+         decoding="async"
+         width="800"
+         height="450"
+         style="display: block; width: 100%; max-width: 100%; height: auto; border-radius: 8px;">
+  {{- else -}}
+    <img src="{{ .Destination | safeURL }}"
+         alt="{{ $alt }}"
+         loading="lazy"
+         decoding="async"
+         width="800"
+         height="450"
+         style="display: block; width: 100%; max-width: 100%; height: auto; border-radius: 8px;">
+  {{- end -}}
+
+  {{- if $caption -}}
+    <figcaption style="margin-top: 0.65rem; text-align: center; font-size: 0.85rem; color: #64748b; font-weight: 500;">
+      {{ $caption }}
+    </figcaption>
+  {{- end -}}
+</figure>

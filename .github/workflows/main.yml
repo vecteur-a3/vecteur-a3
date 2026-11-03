@@ -1,0 +1,146 @@
+# Chemin exact : .github/workflows/main.yml
+name: Vecteur A3 - Pipeline SEO Programmatique & Conformité YMYL
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+      - master
+  # Déclenchement quotidien à 03:37 UTC (hors début d'heure pile et décalé de Vecteur 1)
+  schedule:
+    - cron: '37 3 * * *'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: "a3-pages-pipeline"
+  cancel-in-progress: false
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+      issues: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: Signal de démarrage (Dead Man's Switch - Optionnel)
+        env:
+          HC_PING_URL: ${{ secrets.HEALTHCHECKS_PING_URL }}
+        run: |
+          if [ -n "$HC_PING_URL" ]; then
+            echo "Envoi du signal de démarrage vers le moniteur externe..."
+            curl -fsS -m 10 --retry 3 "${HC_PING_URL}/start" || true
+          else
+            echo "Aucun secret HEALTHCHECKS_PING_URL configuré (optionnel). Étape ignorée."
+          fi
+
+      - name: Clonage du dépôt (historique complet pour GitInfo)
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Configuration de Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: 'pip'
+
+      - name: Restauration du cache HTTP SQLite (.cache/http_cache.sqlite)
+        uses: actions/cache@v4
+        with:
+          path: .cache
+          key: a3-http-sqlite-cache-${{ runner.os }}-${{ github.run_id }}
+          restore-keys: |
+            a3-http-sqlite-cache-${{ runner.os }}-
+
+      - name: Installation des dépendances Python
+        run: |
+          set -o pipefail
+          pip install -r requirements.txt 2>&1 | tee -a /tmp/pipeline.log
+
+      - name: Ingestion des matrices curées et des 3 flux RSS officiels (EDPB & CNIL)
+        run: |
+          set -o pipefail
+          python scripts/ingest_privacy.py 2>&1 | tee -a /tmp/pipeline.log
+
+      - name: Quality Gate YMYL & Génération idempotente des articles Markdown
+        run: |
+          set -o pipefail
+          python scripts/generate_pages.py --verbose 2>&1 | tee -a /tmp/pipeline.log
+
+      - name: Configuration de Hugo Extended
+        uses: peaceiris/actions-hugo@v3
+        with:
+          hugo-version: 'latest'
+          extended: true
+
+      - name: Compilation statique Hugo (Build propre & minifié)
+        run: |
+          set -o pipefail
+          hugo --minify --cleanDestinationDir 2>&1 | tee -a /tmp/pipeline.log
+
+      - name: Upload de l'artefact GitHub Pages
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./public
+
+      - name: Déploiement sur GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+
+      - name: Signal de succès (Dead Man's Switch - Optionnel)
+        if: success()
+        env:
+          HC_PING_URL: ${{ secrets.HEALTHCHECKS_PING_URL }}
+        run: |
+          if [ -n "$HC_PING_URL" ]; then
+            curl -fsS -m 10 --retry 3 "${HC_PING_URL}" || true
+          fi
+
+      - name: Alerte d'échec (Création/Mise à jour d'Issue GitHub avec logs)
+        if: failure()
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          HC_PING_URL: ${{ secrets.HEALTHCHECKS_PING_URL }}
+        run: |
+          if [ -f /tmp/pipeline.log ]; then
+            LOG_TAIL=$(tail -n 40 /tmp/pipeline.log)
+          else
+            LOG_TAIL="Aucun journal /tmp/pipeline.log disponible (échec avant les étapes Python/Hugo)."
+          fi
+
+          if [ -n "$HC_PING_URL" ]; then
+            curl -fsS -m 10 --retry 3 --data-raw "$LOG_TAIL" "${HC_PING_URL}/fail" || true
+          fi
+
+          ISSUE_TITLE="[ALERTE CI/CD] Échec du pipeline Vecteur A3"
+          RUN_URL="${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+          BODY_FILE="/tmp/issue_body.md"
+
+          {
+            echo "### ❌ Échec détecté sur le pipeline Vecteur A3"
+            echo "- **Exécution (Run) :** [Voir les détails dans GitHub Actions]($RUN_URL)"
+            echo "- **Déclencheur :** \`${{ github.event_name }}\`"
+            echo "- **Date (UTC) :** \`$(date -u +"%Y-%m-%d %H:%M:%S UTC")\`"
+            echo ""
+            echo "#### Dernières lignes du journal d'exécution (\`pipeline.log\`) :"
+            echo "\`\`\`text"
+            echo "${LOG_TAIL}"
+            echo "\`\`\`"
+          } > "$BODY_FILE"
+
+          EXISTING_ISSUE=$(gh issue list --repo "${{ github.repository }}" --state open --search "\"${ISSUE_TITLE}\" in:title" --json number --jq '.[0].number')
+          if [ -n "$EXISTING_ISSUE" ] && [ "$EXISTING_ISSUE" != "null" ]; then
+            gh issue comment "$EXISTING_ISSUE" --repo "${{ github.repository }}" --body-file "$BODY_FILE"
+          else
+            gh issue create --repo "${{ github.repository }}" --title "$ISSUE_TITLE" --body-file "$BODY_FILE"
+          fi

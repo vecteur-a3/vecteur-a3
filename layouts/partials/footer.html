@@ -1,0 +1,255 @@
+<!-- Chemin exact : layouts/partials/footer.html -->
+<style>
+    .site-footer-enterprise {
+        background-color: #090d16;
+        background-image:
+            radial-gradient(ellipse 65% 50% at 50% 0%, rgba(13, 148, 136, 0.14), transparent),
+            linear-gradient(180deg, #0f172a 0%, #090d16 100%);
+        color: #94a3b8;
+        border-top: 1px solid #1e293b;
+        margin-top: 4.5rem;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        -webkit-font-smoothing: antialiased;
+    }
+    .footer-inner {
+        max-width: 980px;
+        margin: 0 auto;
+        padding: 3rem 1.25rem 2rem;
+    }
+    @media (min-width: 640px) {
+        .footer-inner { padding: 3.5rem 1.5rem 2.25rem; }
+    }
+    .footer-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 2.25rem;
+        padding-bottom: 2.25rem;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    @media (min-width: 740px) {
+        .footer-grid {
+            grid-template-columns: 1.5fr 1fr 1fr;
+            gap: 2.5rem;
+        }
+    }
+    .footer-brand-row {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.6rem;
+        font-size: 1.02rem;
+        font-weight: 800;
+        color: #ffffff !important;
+        text-decoration: none !important;
+        letter-spacing: -0.02em;
+        margin-bottom: 0.85rem;
+    }
+    .footer-brand-mark {
+        width: 28px;
+        height: 28px;
+        border-radius: 8px;
+        background: linear-gradient(135deg, rgba(20, 184, 166, 0.22) 0%, rgba(13, 148, 136, 0.38) 100%);
+        border: 1px solid rgba(45, 212, 191, 0.45);
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        box-shadow: 0 0 12px rgba(20, 184, 166, 0.22);
+    }
+    .footer-brand-mark svg {
+        width: 15px;
+        height: 15px;
+        color: #2dd4bf;
+    }
+    .footer-mission {
+        font-size: 0.84rem;
+        line-height: 1.62;
+        color: #94a3b8;
+        margin: 0 0 1.15rem 0;
+        max-width: 380px;
+    }
+    .footer-status-pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.45rem;
+        font-size: 0.72rem;
+        font-weight: 700;
+        color: #ccfbf1;
+        background-color: rgba(13, 148, 136, 0.16);
+        border: 1px solid rgba(45, 212, 191, 0.32);
+        padding: 0.3rem 0.75rem;
+        border-radius: 9999px;
+    }
+    .footer-status-dot {
+        width: 6.5px;
+        height: 6.5px;
+        border-radius: 50%;
+        background-color: #10b981;
+        box-shadow: 0 0 8px rgba(16, 185, 129, 0.9);
+    }
+    .footer-col-title {
+        font-size: 0.71rem;
+        font-weight: 800;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: #f8fafc;
+        margin: 0 0 0.95rem 0;
+    }
+    .footer-links {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 0.62rem;
+    }
+    .footer-links a {
+        color: #cbd5e1 !important;
+        text-decoration: none !important;
+        font-size: 0.84rem;
+        font-weight: 500;
+        transition: color 0.18s ease, transform 0.18s ease;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.35rem;
+    }
+    .footer-links a:hover {
+        color: #2dd4bf !important;
+    }
+
+    /* Bandeau horizontal de conformité YMYL & FTC (2 cartes symétriques) */
+    .footer-compliance-bar {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 0.85rem;
+        padding: 1.4rem 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    @media (min-width: 740px) {
+        .footer-compliance-bar {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 1.25rem;
+        }
+    }
+    .footer-compliance-card {
+        background-color: rgba(15, 23, 42, 0.75);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 10px;
+        padding: 0.85rem 1rem;
+        font-size: 0.76rem;
+        line-height: 1.55;
+        color: #94a3b8;
+    }
+    .footer-compliance-card strong {
+        color: #e2e8f0;
+        font-weight: 700;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.35rem;
+        margin-bottom: 0.15rem;
+    }
+    .footer-compliance-card code {
+        font-family: ui-monospace, SFMono-Regular, monospace;
+        font-size: 0.69rem;
+        color: #5eead4;
+        background-color: rgba(13, 148, 136, 0.18);
+        border: 1px solid rgba(45, 212, 191, 0.25);
+        padding: 0.05rem 0.35rem;
+        border-radius: 4px;
+    }
+
+    .footer-bottom {
+        padding-top: 1.35rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        gap: 0.65rem;
+        font-size: 0.78rem;
+        color: #64748b;
+    }
+    @media (min-width: 640px) {
+        .footer-bottom { flex-direction: row; }
+    }
+    .footer-bottom p { margin: 0; }
+    .footer-badge-tech {
+        font-size: 0.74rem;
+        color: #94a3b8;
+        font-weight: 600;
+    }
+</style>
+
+<footer class="site-footer-enterprise">
+    <div class="footer-inner">
+        <div class="footer-grid">
+            <!-- Colonne 1 : Marque avec écusson assorti, Mission A3 & Statut du Pipeline -->
+            <div>
+                <a href="/" class="footer-brand-row">
+                    <span class="footer-brand-mark" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><path d="m9 12 2 2 4-4"></path></svg>
+                    </span>
+                    <span>{{ .Site.Title }}</span>
+                </a>
+                <p class="footer-mission">
+                    Independent technical comparisons of cookieless web analytics tools, frontend framework integration guides, and official Data Protection Authority (DPA) publications.
+                </p>
+                <div class="footer-status-pill">
+                    <span class="footer-status-dot" aria-hidden="true"></span>
+                    <span>90-Day YMYL Freshness Gate: Active</span>
+                </div>
+            </div>
+
+            <!-- Colonne 2 : Audits & Comparatifs phares (Résolution dynamique Hugo .Site.GetPage : zéro 404 possible) -->
+            <div>
+                <h3 class="footer-col-title">Architecture &amp; Audits</h3>
+                <ul class="footer-links">
+                    <li><a href="/">All Privacy Analytics Audits</a></li>
+                    {{ with .Site.GetPage "/posts/cookieless-google-analytics-4-alternatives-technical-audit" }}
+                    <li><a href="{{ .RelPermalink }}">GA4 Cookieless Alternatives</a></li>
+                    {{ else }}
+                    <li><a href="/cookieless-google-analytics-4-alternatives-technical-audit/">GA4 Cookieless Alternatives</a></li>
+                    {{ end }}
+                    {{ with .Site.GetPage "/posts/simple-analytics-vs-plausible-analytics-technical-comparison" }}
+                    <li><a href="{{ .RelPermalink }}">Simple Analytics vs Plausible</a></li>
+                    {{ else }}
+                    <li><a href="/simple-analytics-vs-plausible-analytics-technical-comparison/">Simple Analytics vs Plausible</a></li>
+                    {{ end }}
+                    {{ with .Site.GetPage "/posts/data-protection-authority-web-analytics-publications-digest" }}
+                    <li><a href="{{ .RelPermalink }}">Official DPA Regulatory Digest</a></li>
+                    {{ else }}
+                    <li><a href="/data-protection-authority-web-analytics-publications-digest/">Official DPA Regulatory Digest</a></li>
+                    {{ end }}
+                </ul>
+            </div>
+
+            <!-- Colonne 3 : Gouvernance, Méthodologie & Pages Légales (Intitulés concis sur 1 ligne) -->
+            <div>
+                <h3 class="footer-col-title">Governance &amp; Legal</h3>
+                <ul class="footer-links">
+                    <li><a href="/legal/methodology/">Verification Methodology &amp; Sources</a></li>
+                    <li><a href="/legal/disclaimer/">Not Legal Advice Disclaimer</a></li>
+                    <li><a href="/legal/privacy/">Privacy Policy &amp; FTC Disclosure</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Bandeau horizontal de conformité YMYL & FTC -->
+        <div class="footer-compliance-bar">
+            <div class="footer-compliance-card">
+                <strong>Not Legal Advice (Technical Scope Only)</strong><br>
+                All reports evaluate software engineering specifications documented by vendors as of the stated verification date. Consult qualified legal counsel or your DPO for GDPR/ePrivacy compliance.
+            </div>
+            <div class="footer-compliance-card">
+                <strong>FTC 16 CFR Part 255 Affiliate Disclosure</strong><br>
+                Reader-supported technical research: we may earn referral commissions from clearly disclosed partner links on this portal at no additional cost to you.
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; {{ now.Format "2006" }} {{ .Site.Title }}. All rights reserved.</p>
+            <span class="footer-badge-tech">Built for SaaS Founders, Software Engineers &amp; DPOs</span>
+        </div>
+    </div>
+</footer>
+
+
+

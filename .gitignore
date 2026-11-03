@@ -1,0 +1,46 @@
+# Chemin exact : .gitignore
+# --- 1. Sorties de compilation Hugo (générées dynamiquement par GitHub Actions) ---
+/public/
+/resources/
+.hugo_build.lock
+
+# --- 2. Caches HTTP SQLite & Journaux WAL/SHM (restaurés via actions/cache) ---
+/.cache/
+*.sqlite
+*.sqlite3
+*.sqlite-wal
+*.sqlite-shm
+*.db
+
+# --- 3. Sauvegardes locales & Fichiers de travail temporaires ---
+/backups/
+audit_etat_actuel.txt
+*.bak
+*.tmp
+*.log
+
+# --- 4. Secrets, Variables d'environnement & Clés privées (JAMAIS sur Git) ---
+.env
+.env.*
+*.pem
+*.key
+*.pfx
+*.p12
+
+# --- 5. Environnements virtuels & Bytecode Python ---
+/venv/
+/.venv/
+/env/
+/scripts/venv/
+/scripts/.venv/
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+
+# --- 6. Fichiers système OS & Éditeurs ---
+.DS_Store
+Thumbs.db
+Desktop.ini
+.vscode/
+.idea/
