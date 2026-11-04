@@ -572,7 +572,7 @@
                 {{ range $posts }}
                 <a href="{{ .Permalink }}" class="post-card">
                     <div class="post-image-container">
-                        <img src="{{ .Params.image | default ("/images/default-cover.svg" | relURL) }}" alt="{{ .Title }}" loading="lazy" class="post-image">
+                        <img src="{{ .Params.image | default (("/images/default-cover.svg" | relURL) | relURL) }}" alt="{{ .Title }}" loading="lazy" class="post-image">
                         {{ with .Params.last_verified }}
                         <span class="post-image-badge">
                             <span class="post-image-badge-dot" aria-hidden="true"></span>
