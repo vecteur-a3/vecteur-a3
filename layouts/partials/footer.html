@@ -183,7 +183,7 @@
         <div class="footer-grid">
             <!-- Colonne 1 : Marque avec écusson assorti, Mission A3 & Statut du Pipeline -->
             <div>
-                <a href="/" class="footer-brand-row">
+                <a href="{{ site.Home.RelPermalink }}" class="footer-brand-row">
                     <span class="footer-brand-mark" aria-hidden="true">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><path d="m9 12 2 2 4-4"></path></svg>
                     </span>
@@ -202,21 +202,21 @@
             <div>
                 <h3 class="footer-col-title">Architecture &amp; Audits</h3>
                 <ul class="footer-links">
-                    <li><a href="/">All Privacy Analytics Audits</a></li>
+                    <li><a href="{{ site.Home.RelPermalink }}">All Privacy Analytics Audits</a></li>
                     {{ with .Site.GetPage "/posts/cookieless-google-analytics-4-alternatives-technical-audit" }}
                     <li><a href="{{ .RelPermalink }}">GA4 Cookieless Alternatives</a></li>
                     {{ else }}
-                    <li><a href="/cookieless-google-analytics-4-alternatives-technical-audit/">GA4 Cookieless Alternatives</a></li>
+                    <li><a href="{{ "cookieless-google-analytics-4-alternatives-technical-audit/" | relURL }}">GA4 Cookieless Alternatives</a></li>
                     {{ end }}
                     {{ with .Site.GetPage "/posts/simple-analytics-vs-plausible-analytics-technical-comparison" }}
                     <li><a href="{{ .RelPermalink }}">Simple Analytics vs Plausible</a></li>
                     {{ else }}
-                    <li><a href="/simple-analytics-vs-plausible-analytics-technical-comparison/">Simple Analytics vs Plausible</a></li>
+                    <li><a href="{{ "simple-analytics-vs-plausible-analytics-technical-comparison/" | relURL }}">Simple Analytics vs Plausible</a></li>
                     {{ end }}
                     {{ with .Site.GetPage "/posts/data-protection-authority-web-analytics-publications-digest" }}
                     <li><a href="{{ .RelPermalink }}">Official DPA Regulatory Digest</a></li>
                     {{ else }}
-                    <li><a href="/data-protection-authority-web-analytics-publications-digest/">Official DPA Regulatory Digest</a></li>
+                    <li><a href="{{ "data-protection-authority-web-analytics-publications-digest/" | relURL }}">Official DPA Regulatory Digest</a></li>
                     {{ end }}
                 </ul>
             </div>
@@ -225,9 +225,9 @@
             <div>
                 <h3 class="footer-col-title">Governance &amp; Legal</h3>
                 <ul class="footer-links">
-                    <li><a href="/legal/methodology/">Verification Methodology &amp; Sources</a></li>
-                    <li><a href="/legal/disclaimer/">Not Legal Advice Disclaimer</a></li>
-                    <li><a href="/legal/privacy/">Privacy Policy &amp; FTC Disclosure</a></li>
+                    <li><a href="{{ "legal/methodology/" | relURL }}">Verification Methodology &amp; Sources</a></li>
+                    <li><a href="{{ "legal/disclaimer/" | relURL }}">Not Legal Advice Disclaimer</a></li>
+                    <li><a href="{{ "legal/privacy/" | relURL }}">Privacy Policy &amp; FTC Disclosure</a></li>
                 </ul>
             </div>
         </div>

@@ -1,20 +1,19 @@
 {
-  "_comment": "Chemin exact : static/site.webmanifest",
   "name": "Privacy Analytics & Compliance Intel",
   "short_name": "PrivacyIntel",
   "icons": [
     {
-      "src": "/favicon.svg",
+      "src": "favicon.svg",
       "sizes": "any",
       "type": "image/svg+xml"
     },
     {
-      "src": "/favicon.png",
+      "src": "favicon.png",
       "sizes": "32x32",
       "type": "image/png"
     },
     {
-      "src": "/apple-touch-icon.png",
+      "src": "apple-touch-icon.png",
       "sizes": "180x180",
       "type": "image/png"
     }

@@ -8,16 +8,16 @@
 <meta name="robots" content="{{ if .IsHome }}index, follow{{ else }}{{ .Params.seo_index | default "noindex" }}{{ end }}">
 <link rel="canonical" href="{{ .Permalink }}">
 
-<!-- 2. Balises Open Graph (Partage B2B SaaS / DPO / Ingénierie) -->
+<!-- 2. Balises Open Graph -->
 <meta property="og:title" content="{{ .Title | default .Site.Title }}">
 <meta property="og:description" content="{{ .Params.description | default .Site.Params.description }}">
 <meta property="og:type" content="{{ if .IsPage }}article{{ else }}website{{ end }}">
 <meta property="og:url" content="{{ .Permalink }}">
 {{ if .Params.image }}
-<meta property="og:image" content="{{ .Params.image | absURL }}">
+<meta property="og:image" content="{{ strings.TrimPrefix "/" .Params.image | absURL }}">
 {{ end }}
 
-<!-- 3. Données Structurées JSON-LD Schema.org (TechArticle factuel, zéro avis ou note inventés) -->
+<!-- 3. Données Structurées JSON-LD Schema.org -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -34,14 +34,14 @@
 }
 </script>
 
-<!-- 4. Point d'intégration Analytics sans cookie (piloté dynamiquement depuis hugo.toml) -->
+<!-- 4. Point d'intégration Analytics sans cookie -->
 {{ if .Site.Params.analytics_domain }}
 <script defer data-domain="{{ .Site.Params.analytics_domain }}" src="{{ .Site.Params.analytics_script_url | default "https://plausible.io/js/script.outbound-links.tagged-events.js" }}"></script>
 {{ end }}
 
-<!-- 5. Identité Visuelle & Favicons (Palette Deep Teal #0d9488) -->
-<link rel="icon" href="/favicon.svg" type="image/svg+xml">
-<link rel="icon" href="/favicon.png" type="image/png" sizes="32x32">
-<link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180">
-<link rel="manifest" href="/site.webmanifest">
+<!-- 5. Identité Visuelle & Favicons compatibles sous-dossier GitHub Pages et domaine personnalisé -->
+<link rel="icon" href="{{ "favicon.svg" | relURL }}" type="image/svg+xml">
+<link rel="icon" href="{{ "favicon.png" | relURL }}" type="image/png" sizes="32x32">
+<link rel="apple-touch-icon" href="{{ "apple-touch-icon.png" | relURL }}" sizes="180x180">
+<link rel="manifest" href="{{ "site.webmanifest" | relURL }}">
 <meta name="theme-color" content="#0d9488">

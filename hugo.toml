@@ -1,19 +1,16 @@
 # Chemin exact : hugo.toml
 # Configuration principale du site "Vecteur A3" (Privacy-Friendly Web Analytics & Technical Compliance)
 
-# [À REMPLACER : Mets ici ton vrai nom de domaine A3 une fois acheté (~10 $/an)]
-baseURL = 'https://ton-domaine-privacy-a3.com/'
+baseURL = 'https://vecteur-a3.github.io/vecteur-a3/'
+canonifyURLs = true
 title = 'Privacy Analytics & Compliance Intel'
+
 [languages.en]
   locale = 'en-US'
   label = 'English'
 
 enableRobotsTXT = true
-
-# Active l'extraction de la date de dernière modification depuis l'historique Git (E-E-A-T)
 enableGitInfo = true
-
-# Désactive la génération des pages de listes inutiles (architecture SEO plate)
 disableKinds = ["taxonomy", "term", "section"]
 
 [permalinks]
@@ -27,7 +24,6 @@ disableKinds = ["taxonomy", "term", "section"]
 [frontmatter]
   lastmod = [":git", "lastmod", "date", "publishDate"]
 
-# --- CONFIGURATION GOLDMARK (Sécurité XSS stricte : HTML brut désactivé) ---
 [markup]
   [markup.goldmark]
     [markup.goldmark.renderer]
@@ -41,10 +37,8 @@ disableKinds = ["taxonomy", "term", "section"]
 [params]
   author = 'Vecteur A3 Technical Research'
   description = 'Independent technical comparisons of cookieless web analytics tools, framework implementation guides, and data protection authority publications. Not legal advice.'
-  # [À REMPLACER : Adresse e-mail de contact officielle du site A3]
   contact_email = 'contact@ton-domaine-privacy-a3.com'
-  # [À VÉRIFIER / REMPLACER : Outil d'analytics utilisé par le site lui-même et domaine associé]
   analytics_provider = 'Plausible Analytics'
-  analytics_domain = 'ton-domaine-privacy-a3.com'
+  analytics_domain = ''
   analytics_script_url = 'https://plausible.io/js/script.outbound-links.tagged-events.js'
   ymyl_disclaimer_short = 'Technical Specification Audit Only — Not Legal Advice. Verify compliance requirements with qualified legal counsel.'
