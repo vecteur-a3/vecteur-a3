@@ -4,8 +4,6 @@
 # [À REMPLACER : Mets ici ton vrai nom de domaine A3 une fois acheté (~10 $/an)]
 baseURL = 'https://ton-domaine-privacy-a3.com/'
 title = 'Privacy Analytics & Compliance Intel'
-theme = ''
-
 [languages.en]
   locale = 'en-US'
   label = 'English'

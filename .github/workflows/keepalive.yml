@@ -3,7 +3,6 @@ name: Vecteur A3 - Keepalive Natif (Anti-Inactivité 60 Jours)
 
 on:
   workflow_dispatch:
-  # Exécution le 2 et le 16 de chaque mois à 04:41 UTC (décalé par rapport à Vecteur 1)
   schedule:
     - cron: '41 4 2,16 * *'
 
@@ -16,7 +15,7 @@ concurrency:
 
 jobs:
   keepalive:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 5
     permissions:
       actions: write
