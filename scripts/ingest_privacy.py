@@ -28,6 +28,7 @@ logging.basicConfig(
     format='%(asctime)s - %(levelname)s - %(message)s'
 )
 logger = logging.getLogger(__name__)
+logging.getLogger("requests_cache").setLevel(logging.ERROR)
 
 # Chemins absolus à partir de la racine du dépôt Vecteur A3
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -39,7 +40,7 @@ OUTPUT_FILE = os.path.join(DATA_DIR, 'privacy_intel.json')
 # Dossier et fichier dédiés au cache HTTP SQLite (restauré par actions/cache dans GitHub Actions)
 CACHE_DIR = os.path.join(BASE_DIR, '.cache')
 CACHE_DB_PATH = os.path.join(CACHE_DIR, 'http_cache.sqlite')
-CACHE_EXPIRE_SECONDS = 3600  # Validité du cache HTTP : 1 heure (3600 secondes)
+CACHE_EXPIRE_SECONDS = 21600  # Validité du cache HTTP : 1 heure (3600 secondes)
 
 # Paramètres métier et réseau (Zéro scraping HTML, 1 requête par flux, pause de courtoisie)
 MAX_EXCERPT_CHARS = 160
@@ -133,12 +134,12 @@ class LoggedRetry(Retry):
         attempt_num = 5 - (new_retry.total if isinstance(new_retry.total, int) else 0)
         if response is not None:
             retry_after = response.headers.get("Retry-After", "non spécifié")
-            logger.warning(
+            logger.info(
                 f"[RETRY #{attempt_num}] Statut HTTP {response.status} reçu sur {url} "
                 f"(En-tête Retry-After: {retry_after}). Attente backoff + jitter en cours..."
             )
         elif error is not None:
-            logger.warning(
+            logger.info(
                 f"[RETRY #{attempt_num}] Erreur réseau transitoire sur {url} ({error}). "
                 f"Attente backoff + jitter en cours..."
             )

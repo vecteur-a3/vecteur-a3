@@ -53,8 +53,8 @@ Ce document centralise l'ensemble des vérifications manuelles à effectuer par 
 ## Priorité 4 — Identité de Production, Affiliation & Relecture Juridique
 
 1. **Nom de domaine, e-mail de contact et outil d'analytics du site :**
-   - Remplacer `ton-domaine-privacy-a3.com` et `contact@ton-domaine-privacy-a3.com` dans `hugo.toml` et `static/CNAME`.
-   - Remplacer `compliance-contact@privacy-analytics-intel.example.com` dans `content/legal/methodology.md` et `content/legal/privacy.md`.
+   - Remplacer `ton-domaine-privacy-a3.com` et `contact@privacyanalyticsintel.com` dans `hugo.toml` et `static/CNAME`.
+   - Remplacer `contact@privacyanalyticsintel.com` dans `content/legal/methodology.md` et `content/legal/privacy.md`.
 2. **Identifiants et conditions des programmes d'affiliation (`scripts/generate_pages.py`) :**
    - Vérifier les conditions officielles (taux de commission, durée de cookie/attribution, interdiction d'enchérir sur les mots-clés de marque) et remplacer `A_REMPLACER_ID_AFFILIE` dans le dictionnaire `AFFILIATE_CONFIG` de `scripts/generate_pages.py`.
 3. **Relecture juridique professionnelle (YMYL) :**

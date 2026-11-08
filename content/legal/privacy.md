@@ -31,4 +31,4 @@ Because our publication audits privacy-friendly web analytics platforms, we main
 ## 3. Professional Legal Review & Maintainer Contact
 
 <!-- [À REMPLACER AVANT MISE EN LIGNE COMMERCIALE : Remplacez l'adresse e-mail ci-dessous par votre adresse de contact réelle et faites relire vos pages légales par un professionnel du droit] -->
-This privacy and transparency policy is provided for informational clarity and should be reviewed by qualified legal counsel prior to commercial operation. For any questions regarding our technical comparison matrices, source attributions, or affiliate disclosures, please contact **`compliance-contact@privacy-analytics-intel.privacyanalyticsintel.com`**.
+This privacy and transparency policy is provided for informational clarity and should be reviewed by qualified legal counsel prior to commercial operation. For any questions regarding our technical comparison matrices, source attributions, or affiliate disclosures, please contact **`contact@privacyanalyticsintel.com`**.
