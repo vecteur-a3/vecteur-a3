@@ -10,8 +10,8 @@ $ErrorActionPreference = "Stop"
 $Config = @{
     # --- DOMAINE & CONTACT ---
     # Dès que vous achetez votre nom de domaine (~10 $/an), remplacez ces deux valeurs :
-    NewDomain        = "ton-domaine-privacy-a3.com"
-    NewContactEmail  = "contact@ton-domaine-privacy-a3.com"
+    NewDomain        = "privacyanalyticsintel.com"
+    NewContactEmail  = "contact@privacyanalyticsintel.com"
 
     # Si $false : supprime temporairement static/CNAME pour tester sur https://<pseudo>.github.io/<repo>/
     KeepCnameFile    = $true
