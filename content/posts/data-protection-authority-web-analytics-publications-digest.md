@@ -3,26 +3,26 @@ aliases:
 - /data-protection-authority-dpa-publications-web-analytics-technical-digest/
 attributions_list:
 - attribution_text: 'Source: European Data Protection Board (EDPB) - https://www.edpb.europa.eu
-    (Extracted on 03/11/2026, EDPB Legal Notice: https://www.edpb.europa.eu/copyright_en)'
+    (Extracted on 04/11/2026, EDPB Legal Notice: https://www.edpb.europa.eu/copyright_en)'
   authority_id: edpb-news
   authority_name: European Data Protection Board (EDPB - News)
-  extraction_date: 03/11/2026
+  extraction_date: 04/11/2026
   license: EDPB Legal Notice (Commercial & non-commercial reuse authorized with source
     acknowledgement)
   license_url: https://www.edpb.europa.eu/copyright_en
 - attribution_text: 'Source: European Data Protection Board (EDPB) - https://www.edpb.europa.eu
-    (Extracted on 03/11/2026, EDPB Legal Notice: https://www.edpb.europa.eu/copyright_en)'
+    (Extracted on 04/11/2026, EDPB Legal Notice: https://www.edpb.europa.eu/copyright_en)'
   authority_id: edpb-publications
   authority_name: European Data Protection Board (EDPB - Guidelines & Publications)
-  extraction_date: 03/11/2026
+  extraction_date: 04/11/2026
   license: EDPB Legal Notice (Commercial & non-commercial reuse authorized with source
     acknowledgement)
   license_url: https://www.edpb.europa.eu/copyright_en
-- attribution_text: 'Source : CNIL – https://www.cnil.fr (Extrait le 03/11/2026, licence
+- attribution_text: 'Source : CNIL – https://www.cnil.fr (Extrait le 04/11/2026, licence
     CC-BY-ND 4.0 FR : https://creativecommons.org/licenses/by-nd/4.0/deed.fr)'
   authority_id: cnil-en
   authority_name: CNIL (French Data Protection Authority - English Feed)
-  extraction_date: 03/11/2026
+  extraction_date: 04/11/2026
   license: CC-BY-ND 4.0 FR (NoDerivatives - Pas de modifications)
   license_url: https://creativecommons.org/licenses/by-nd/4.0/deed.fr
 compared_tools_count: 3
@@ -33,7 +33,7 @@ has_ambiguous_fields: true
 image: /images/default-cover.svg
 keyword: DPA Regulatory Digest
 last_verified: '2026-10-27'
-lastmod: '2026-11-03T03:22:51Z'
+lastmod: '2026-11-04T06:36:37Z'
 lien_affiliation_principal: https://www.simpleanalytics.com/
 not_legal_advice: Technical comparison only — Not legal advice.
 official_source_url: https://docs.simpleanalytics.com/data-security-and-ownership
@@ -85,49 +85,49 @@ type_page: regulatory_watch
 > **Not Legal Advice:** This technical audit compares software specifications documented by each vendor and does not constitute legal advice or a formal regulatory compliance opinion.
 
 #### 2026-10-16 — European Data Protection Board (EDPB - News): Norwegian DPA fines Xandr EUR 8 600 000 for unlawful processing of personal data [Official Institutional Publication &rarr;](https://www.edpb.europa.eu/news/norwegian-dpa-fines-xandr-eur-8-600-000-for-unlawful-processing-of-personal-data_en)
-- **`[MANDATORY ATTRIBUTION]`** Source: European Data Protection Board (EDPB) - https://www.edpb.europa.eu (Extracted on 03/11/2026, EDPB Legal Notice: https://www.edpb.europa.eu/copyright_en) — **License:** [EDPB Legal Notice (Commercial & non-commercial reuse authorized with source acknowledge...](https://www.edpb.europa.eu/copyright_en) *(Extracted on 03/11/2026)*
+- **`[MANDATORY ATTRIBUTION]`** Source: European Data Protection Board (EDPB) - https://www.edpb.europa.eu (Extracted on 04/11/2026, EDPB Legal Notice: https://www.edpb.europa.eu/copyright_en) — **License:** [EDPB Legal Notice (Commercial & non-commercial reuse authorized with source acknowledge...](https://www.edpb.europa.eu/copyright_en) *(Extracted on 04/11/2026)*
 
 #### 2026-10-13 — European Data Protection Board (EDPB - News): EDPB publishes statement on the data protection challenges of smart glasses [Official Institutional Publication &rarr;](https://www.edpb.europa.eu/news/edpb-publishes-statement-on-the-data-protection-challenges-of-smart-glasses_en)
-- **`[MANDATORY ATTRIBUTION]`** Source: European Data Protection Board (EDPB) - https://www.edpb.europa.eu (Extracted on 03/11/2026, EDPB Legal Notice: https://www.edpb.europa.eu/copyright_en) — **License:** [EDPB Legal Notice (Commercial & non-commercial reuse authorized with source acknowledge...](https://www.edpb.europa.eu/copyright_en) *(Extracted on 03/11/2026)*
+- **`[MANDATORY ATTRIBUTION]`** Source: European Data Protection Board (EDPB) - https://www.edpb.europa.eu (Extracted on 04/11/2026, EDPB Legal Notice: https://www.edpb.europa.eu/copyright_en) — **License:** [EDPB Legal Notice (Commercial & non-commercial reuse authorized with source acknowledge...](https://www.edpb.europa.eu/copyright_en) *(Extracted on 04/11/2026)*
 
 #### 2026-10-09 — European Data Protection Board (EDPB - News): Italian DPA fines IQVIA EUR 7 000 000 for unlawful processing of patients’ health data [Official Institutional Publication &rarr;](https://www.edpb.europa.eu/news/italian-dpa-fines-iqvia-eur-7-000-000-for-unlawful-processing-of-patients-health-data_en)
-- **`[MANDATORY ATTRIBUTION]`** Source: European Data Protection Board (EDPB) - https://www.edpb.europa.eu (Extracted on 03/11/2026, EDPB Legal Notice: https://www.edpb.europa.eu/copyright_en) — **License:** [EDPB Legal Notice (Commercial & non-commercial reuse authorized with source acknowledge...](https://www.edpb.europa.eu/copyright_en) *(Extracted on 03/11/2026)*
+- **`[MANDATORY ATTRIBUTION]`** Source: European Data Protection Board (EDPB) - https://www.edpb.europa.eu (Extracted on 04/11/2026, EDPB Legal Notice: https://www.edpb.europa.eu/copyright_en) — **License:** [EDPB Legal Notice (Commercial & non-commercial reuse authorized with source acknowledge...](https://www.edpb.europa.eu/copyright_en) *(Extracted on 04/11/2026)*
 
 #### 2026-10-09 — European Data Protection Board (EDPB - News): Italian DPA fines security company EUR 39 000 for violations concerning employees’ data [Official Institutional Publication &rarr;](https://www.edpb.europa.eu/news/italian-dpa-fines-security-company-eur-39-000-for-violations-concerning-employees-data_en)
-- **`[MANDATORY ATTRIBUTION]`** Source: European Data Protection Board (EDPB) - https://www.edpb.europa.eu (Extracted on 03/11/2026, EDPB Legal Notice: https://www.edpb.europa.eu/copyright_en) — **License:** [EDPB Legal Notice (Commercial & non-commercial reuse authorized with source acknowledge...](https://www.edpb.europa.eu/copyright_en) *(Extracted on 03/11/2026)*
+- **`[MANDATORY ATTRIBUTION]`** Source: European Data Protection Board (EDPB) - https://www.edpb.europa.eu (Extracted on 04/11/2026, EDPB Legal Notice: https://www.edpb.europa.eu/copyright_en) — **License:** [EDPB Legal Notice (Commercial & non-commercial reuse authorized with source acknowledge...](https://www.edpb.europa.eu/copyright_en) *(Extracted on 04/11/2026)*
 
 #### 2026-10-09 — European Data Protection Board (EDPB - News): Italian DPA fines Emirates EUR 180 000 for infringements concerning passengers’ health data [Official Institutional Publication &rarr;](https://www.edpb.europa.eu/news/italian-dpa-fines-emirates-eur-180-000-for-infringements-concerning-passengers-health-data_en)
-- **`[MANDATORY ATTRIBUTION]`** Source: European Data Protection Board (EDPB) - https://www.edpb.europa.eu (Extracted on 03/11/2026, EDPB Legal Notice: https://www.edpb.europa.eu/copyright_en) — **License:** [EDPB Legal Notice (Commercial & non-commercial reuse authorized with source acknowledge...](https://www.edpb.europa.eu/copyright_en) *(Extracted on 03/11/2026)*
+- **`[MANDATORY ATTRIBUTION]`** Source: European Data Protection Board (EDPB) - https://www.edpb.europa.eu (Extracted on 04/11/2026, EDPB Legal Notice: https://www.edpb.europa.eu/copyright_en) — **License:** [EDPB Legal Notice (Commercial & non-commercial reuse authorized with source acknowledge...](https://www.edpb.europa.eu/copyright_en) *(Extracted on 04/11/2026)*
 
 #### 2026-01-19 — European Data Protection Board (EDPB - Guidelines & Publications): Contribution of the EDPB to the European Commission’s evaluation of the Data Protection Law Enforcement Directive (‘‘LED’’) under Article 62 LED [Official Institutional Publication &rarr;](https://www.edpb.europa.eu/documents/reports-statements-and-letters/contribution-of-the-edpb-to-the-european-commissions-0_en)
-- **`[MANDATORY ATTRIBUTION]`** Source: European Data Protection Board (EDPB) - https://www.edpb.europa.eu (Extracted on 03/11/2026, EDPB Legal Notice: https://www.edpb.europa.eu/copyright_en) — **License:** [EDPB Legal Notice (Commercial & non-commercial reuse authorized with source acknowledge...](https://www.edpb.europa.eu/copyright_en) *(Extracted on 03/11/2026)*
+- **`[MANDATORY ATTRIBUTION]`** Source: European Data Protection Board (EDPB) - https://www.edpb.europa.eu (Extracted on 04/11/2026, EDPB Legal Notice: https://www.edpb.europa.eu/copyright_en) — **License:** [EDPB Legal Notice (Commercial & non-commercial reuse authorized with source acknowledge...](https://www.edpb.europa.eu/copyright_en) *(Extracted on 04/11/2026)*
 
 #### 2026-10-13 — European Data Protection Board (EDPB - Guidelines & Publications): Opinion 27/2026 on the draft decision of the Irish Supervisory Authority regarding the Controller Binding Corporate Rules of the HCL Tech Group [Official Institutional Publication &rarr;](https://www.edpb.europa.eu/documents/opinion-of-the-board-art-64/opinion-272026-on-the-draft-decision-of-the-irish-supervisory_en)
-- **`[MANDATORY ATTRIBUTION]`** Source: European Data Protection Board (EDPB) - https://www.edpb.europa.eu (Extracted on 03/11/2026, EDPB Legal Notice: https://www.edpb.europa.eu/copyright_en) — **License:** [EDPB Legal Notice (Commercial & non-commercial reuse authorized with source acknowledge...](https://www.edpb.europa.eu/copyright_en) *(Extracted on 03/11/2026)*
+- **`[MANDATORY ATTRIBUTION]`** Source: European Data Protection Board (EDPB) - https://www.edpb.europa.eu (Extracted on 04/11/2026, EDPB Legal Notice: https://www.edpb.europa.eu/copyright_en) — **License:** [EDPB Legal Notice (Commercial & non-commercial reuse authorized with source acknowledge...](https://www.edpb.europa.eu/copyright_en) *(Extracted on 04/11/2026)*
 
 #### 2026-10-13 — European Data Protection Board (EDPB - Guidelines & Publications): Opinion 28/2026 on the draft decision of the Irish Supervisory Authority regarding the Processor Binding Corporate Rules of the HCL Tech Group [Official Institutional Publication &rarr;](https://www.edpb.europa.eu/documents/opinion-of-the-board-art-64/opinion-282026-on-the-draft-decision-of-the-irish-supervisory_en)
-- **`[MANDATORY ATTRIBUTION]`** Source: European Data Protection Board (EDPB) - https://www.edpb.europa.eu (Extracted on 03/11/2026, EDPB Legal Notice: https://www.edpb.europa.eu/copyright_en) — **License:** [EDPB Legal Notice (Commercial & non-commercial reuse authorized with source acknowledge...](https://www.edpb.europa.eu/copyright_en) *(Extracted on 03/11/2026)*
+- **`[MANDATORY ATTRIBUTION]`** Source: European Data Protection Board (EDPB) - https://www.edpb.europa.eu (Extracted on 04/11/2026, EDPB Legal Notice: https://www.edpb.europa.eu/copyright_en) — **License:** [EDPB Legal Notice (Commercial & non-commercial reuse authorized with source acknowledge...](https://www.edpb.europa.eu/copyright_en) *(Extracted on 04/11/2026)*
 
 #### 2026-10-13 — European Data Protection Board (EDPB - Guidelines & Publications): Opinion 26/2026 on the draft decision of the Dutch Supervisory Authority regarding the Processor Binding Corporate Rules of the Snowflake Group [Official Institutional Publication &rarr;](https://www.edpb.europa.eu/documents/opinion-of-the-board-art-64/opinion-262026-on-the-draft-decision-of-the-dutch-supervisory_en)
-- **`[MANDATORY ATTRIBUTION]`** Source: European Data Protection Board (EDPB) - https://www.edpb.europa.eu (Extracted on 03/11/2026, EDPB Legal Notice: https://www.edpb.europa.eu/copyright_en) — **License:** [EDPB Legal Notice (Commercial & non-commercial reuse authorized with source acknowledge...](https://www.edpb.europa.eu/copyright_en) *(Extracted on 03/11/2026)*
+- **`[MANDATORY ATTRIBUTION]`** Source: European Data Protection Board (EDPB) - https://www.edpb.europa.eu (Extracted on 04/11/2026, EDPB Legal Notice: https://www.edpb.europa.eu/copyright_en) — **License:** [EDPB Legal Notice (Commercial & non-commercial reuse authorized with source acknowledge...](https://www.edpb.europa.eu/copyright_en) *(Extracted on 04/11/2026)*
 
 #### 2026-10-13 — European Data Protection Board (EDPB - Guidelines & Publications): Opinion 25/2026 on the draft decision of the Dutch Supervisory Authority regarding the Controller Binding Corporate Rules of the Snowflake Group [Official Institutional Publication &rarr;](https://www.edpb.europa.eu/documents/opinion-of-the-board-art-64/opinion-252026-on-the-draft-decision-of-the-dutch-supervisory_en)
-- **`[MANDATORY ATTRIBUTION]`** Source: European Data Protection Board (EDPB) - https://www.edpb.europa.eu (Extracted on 03/11/2026, EDPB Legal Notice: https://www.edpb.europa.eu/copyright_en) — **License:** [EDPB Legal Notice (Commercial & non-commercial reuse authorized with source acknowledge...](https://www.edpb.europa.eu/copyright_en) *(Extracted on 03/11/2026)*
+- **`[MANDATORY ATTRIBUTION]`** Source: European Data Protection Board (EDPB) - https://www.edpb.europa.eu (Extracted on 04/11/2026, EDPB Legal Notice: https://www.edpb.europa.eu/copyright_en) — **License:** [EDPB Legal Notice (Commercial & non-commercial reuse authorized with source acknowledge...](https://www.edpb.europa.eu/copyright_en) *(Extracted on 04/11/2026)*
 
 #### 2026-10-29 — CNIL (French Data Protection Authority - English Feed): Cookies et application mobile : sanctions de 7 millions d’euros à l’encontre des sociétés FNAC DARTY PARTICIPATIONS ET SERVICES et FNAC DIRECT [Official Institutional Publication &rarr;](https://www.cnil.fr/fr/sanction-cookies-app-fnac)
-- **`[MANDATORY ATTRIBUTION]`** Source : CNIL – https://www.cnil.fr (Extrait le 03/11/2026, licence CC-BY-ND 4.0 FR : https://creativecommons.org/licenses/by-nd/4.0/deed.fr) — **License:** [CC-BY-ND 4.0 FR (NoDerivatives - Pas de modifications)](https://creativecommons.org/licenses/by-nd/4.0/deed.fr) *(Extracted on 03/11/2026)*
+- **`[MANDATORY ATTRIBUTION]`** Source : CNIL – https://www.cnil.fr (Extrait le 04/11/2026, licence CC-BY-ND 4.0 FR : https://creativecommons.org/licenses/by-nd/4.0/deed.fr) — **License:** [CC-BY-ND 4.0 FR (NoDerivatives - Pas de modifications)](https://creativecommons.org/licenses/by-nd/4.0/deed.fr) *(Extracted on 04/11/2026)*
 
 #### 2026-10-22 — CNIL (French Data Protection Authority - English Feed): Ordre du jour de la séance plénière du 22 octobre 2026 [Official Institutional Publication &rarr;](https://www.cnil.fr/fr/ordre-du-jour-de-la-seance-pleniere-du-22-octobre-2026)
-- **`[MANDATORY ATTRIBUTION]`** Source : CNIL – https://www.cnil.fr (Extrait le 03/11/2026, licence CC-BY-ND 4.0 FR : https://creativecommons.org/licenses/by-nd/4.0/deed.fr) — **License:** [CC-BY-ND 4.0 FR (NoDerivatives - Pas de modifications)](https://creativecommons.org/licenses/by-nd/4.0/deed.fr) *(Extracted on 03/11/2026)*
+- **`[MANDATORY ATTRIBUTION]`** Source : CNIL – https://www.cnil.fr (Extrait le 04/11/2026, licence CC-BY-ND 4.0 FR : https://creativecommons.org/licenses/by-nd/4.0/deed.fr) — **License:** [CC-BY-ND 4.0 FR (NoDerivatives - Pas de modifications)](https://creativecommons.org/licenses/by-nd/4.0/deed.fr) *(Extracted on 04/11/2026)*
 
 #### 2026-10-20 — CNIL (French Data Protection Authority - English Feed): Journée RGPD à Poitiers : cybersécurité, IA et conformité au cœur des enjeux de protection des données [Official Institutional Publication &rarr;](https://www.cnil.fr/fr/journee-rgpd-2026-poitiers)
-- **`[MANDATORY ATTRIBUTION]`** Source : CNIL – https://www.cnil.fr (Extrait le 03/11/2026, licence CC-BY-ND 4.0 FR : https://creativecommons.org/licenses/by-nd/4.0/deed.fr) — **License:** [CC-BY-ND 4.0 FR (NoDerivatives - Pas de modifications)](https://creativecommons.org/licenses/by-nd/4.0/deed.fr) *(Extracted on 03/11/2026)*
+- **`[MANDATORY ATTRIBUTION]`** Source : CNIL – https://www.cnil.fr (Extrait le 04/11/2026, licence CC-BY-ND 4.0 FR : https://creativecommons.org/licenses/by-nd/4.0/deed.fr) — **License:** [CC-BY-ND 4.0 FR (NoDerivatives - Pas de modifications)](https://creativecommons.org/licenses/by-nd/4.0/deed.fr) *(Extracted on 04/11/2026)*
 
 #### 2026-10-19 — CNIL (French Data Protection Authority - English Feed): Revoir le webinaire - Nouveau régime de la prospection téléphonique : comment et quand recueillir le consentement de la personne concernée ? [Official Institutional Publication &rarr;](https://www.cnil.fr/fr/webinaire-demarchage-telephonique)
-- **`[MANDATORY ATTRIBUTION]`** Source : CNIL – https://www.cnil.fr (Extrait le 03/11/2026, licence CC-BY-ND 4.0 FR : https://creativecommons.org/licenses/by-nd/4.0/deed.fr) — **License:** [CC-BY-ND 4.0 FR (NoDerivatives - Pas de modifications)](https://creativecommons.org/licenses/by-nd/4.0/deed.fr) *(Extracted on 03/11/2026)*
+- **`[MANDATORY ATTRIBUTION]`** Source : CNIL – https://www.cnil.fr (Extrait le 04/11/2026, licence CC-BY-ND 4.0 FR : https://creativecommons.org/licenses/by-nd/4.0/deed.fr) — **License:** [CC-BY-ND 4.0 FR (NoDerivatives - Pas de modifications)](https://creativecommons.org/licenses/by-nd/4.0/deed.fr) *(Extracted on 04/11/2026)*
 
 #### 2026-10-16 — CNIL (French Data Protection Authority - English Feed): De la protection des données à la création de valeur en finance : des autorités européennes publient une étude et des bonnes pratiques [Official Institutional Publication &rarr;](https://www.cnil.fr/fr/protection-donnees-valeur-finance-etude-autorites-europeennes)
-- **`[MANDATORY ATTRIBUTION]`** Source : CNIL – https://www.cnil.fr (Extrait le 03/11/2026, licence CC-BY-ND 4.0 FR : https://creativecommons.org/licenses/by-nd/4.0/deed.fr) — **License:** [CC-BY-ND 4.0 FR (NoDerivatives - Pas de modifications)](https://creativecommons.org/licenses/by-nd/4.0/deed.fr) *(Extracted on 03/11/2026)*
+- **`[MANDATORY ATTRIBUTION]`** Source : CNIL – https://www.cnil.fr (Extrait le 04/11/2026, licence CC-BY-ND 4.0 FR : https://creativecommons.org/licenses/by-nd/4.0/deed.fr) — **License:** [CC-BY-ND 4.0 FR (NoDerivatives - Pas de modifications)](https://creativecommons.org/licenses/by-nd/4.0/deed.fr) *(Extracted on 04/11/2026)*
 
 
 ## Side-by-Side Technical Specification Matrix (3 Verified Solutions)
