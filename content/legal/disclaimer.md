@@ -2,8 +2,8 @@
 # Chemin exact : content/legal/disclaimer.md
 title: "Legal & Compliance Disclaimer (Not Legal Advice)"
 description: "Formal YMYL notice: all software comparisons and framework guides on this portal evaluate technical engineering specifications only and do not constitute legal advice."
-date: 2026-10-26T00:00:00Z
-lastmod: 2026-10-28T00:00:00Z
+date: 2026-11-09T00:00:00Z
+lastmod: 2026-11-09T00:00:00Z
 seo_index: "noindex"
 ---
 

@@ -37,7 +37,7 @@
       "server_region": "European Union (Hetzner servers in Falkenstein, Germany; UpCloud in Finland for databases/exports; Bunny CDN in Slovenia)",
       "data_retention": "No retention limit on Starter, Growth, and Business plans until user deletes site or account; daily cryptographic salt is rotated and deleted every 24 hours; encrypted backups kept for 30 days (per vendor docs)",
       "hosting_options": "Managed EU Cloud or Self-Hosted (Docker / AGPLv3 Community Edition)",
-      "starting_price": "Starter plan at $9/month (USD, up to 10k monthly pageviews, monthly or annual billing with 2 months free; VAT excluded and calculated at checkout by Paddle, verified 2026-10-27)",
+      "starting_price": "Starter plan at $9/month (USD, up to 10k monthly pageviews, monthly or annual billing with 2 months free; VAT excluded and calculated at checkout by Paddle, verified 2026-11-09)",
       "best_for": "Developers wanting open-source transparency or custom event tracking",
       "vendor_claim_summary": "According to Plausible Analytics' official data policy and EU hosting documentation, visitor uniqueness is estimated via a 24-hour salted hash without cookies, and all data stays on European-owned servers.",
       "source_url": "https://plausible.io/data-policy",

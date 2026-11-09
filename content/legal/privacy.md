@@ -2,8 +2,8 @@
 # Chemin exact : content/legal/privacy.md
 title: "Privacy Policy & FTC Affiliate Disclosure"
 description: "Data minimization principles, cookieless web analytics transparency, and Federal Trade Commission (FTC 16 CFR Part 255) affiliate disclosure."
-date: 2026-10-26T00:00:00Z
-lastmod: 2026-10-28T00:00:00Z
+date: 2026-11-09T00:00:00Z
+lastmod: 2026-11-09T00:00:00Z
 seo_index: "noindex"
 ---
 

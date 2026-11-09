@@ -2,8 +2,8 @@
 # Chemin exact : content/legal/methodology.md
 title: "Technical Audit Methodology, Primary Sources & License Governance"
 description: "How we verify web analytics technical specifications, enforce our 90-day freshness standard, and comply with European Data Protection Authority reuse licenses."
-date: 2026-10-26T00:00:00Z
-lastmod: 2026-10-28T00:00:00Z
+date: 2026-11-09T00:00:00Z
+lastmod: 2026-11-09T00:00:00Z
 seo_index: "index"
 ---
 
@@ -13,12 +13,12 @@ Unlike automated aggregators that repeat unverified marketing claims, our techni
 
 | Analytics Platform | Architectural Category | Primary Official Documentation | Last Verified | Pricing & Retention Verification Notes |
 | :--- | :--- | :--- | :--- | :--- |
-| **Simple Analytics** | Managed EU Cookieless Cloud | [Security & Ownership Docs &rarr;](https://docs.simpleanalytics.com/data-security-and-ownership) | **2026-10-27** | Starting price displays a prudent checkout notice because VAT inclusion is not stated on the primary pricing page. |
-| **Plausible Analytics** | Open-Source Cookieless Analytics | [Official Data Policy &rarr;](https://plausible.io/data-policy) | **2026-10-27** | All primary technical and pricing parameters confirmed (VAT excluded and calculated at checkout by Paddle). |
-| **Fathom Analytics** | Privacy-Focused Cloud Analytics | [Technical Data Routing &rarr;](https://usefathom.com/data) | **2026-10-27** | EU Data Isolation proxy routing confirmed; aggregate retention ceiling and checkout VAT treatment carry a prudent verification notice. |
-| **Piwik PRO** | Enterprise Analytics & CMP Suite | [Privacy & Security Docs &rarr;](https://piwik.pro/privacy-security/) | **2026-10-27** | Cookie and IP masking modes confirmed; starting price carries a prudent checkout notice regarding VAT treatment. |
-| **Matomo Analytics** | Self-Hosted & Cloud Analytics | [Privacy Configuration FAQ &rarr;](https://matomo.org/faq/general/configure-privacy-settings-in-matomo/) | **2026-10-27** | On-Premise and Cloud technical settings confirmed; Cloud entry pricing displays a currency comparison note (USD vs. EUR excl. tax). |
-| **Google Analytics 4** | Traditional Behavioral Baseline | [EU Data & Privacy Help &rarr;](https://support.google.com/analytics/answer/12017362) | **2026-10-27** | Standard tier is free ($0); Google Analytics 360 enterprise tier is available by custom contract quote only. |
+| **Simple Analytics** | Managed EU Cookieless Cloud | [Security & Ownership Docs &rarr;](https://docs.simpleanalytics.com/data-security-and-ownership) | **2026-11-09** | Starting price displays a prudent checkout notice because VAT inclusion is not stated on the primary pricing page. |
+| **Plausible Analytics** | Open-Source Cookieless Analytics | [Official Data Policy &rarr;](https://plausible.io/data-policy) | **2026-11-09** | All primary technical and pricing parameters confirmed (VAT excluded and calculated at checkout by Paddle). |
+| **Fathom Analytics** | Privacy-Focused Cloud Analytics | [Technical Data Routing &rarr;](https://usefathom.com/data) | **2026-11-09** | EU Data Isolation proxy routing confirmed; aggregate retention ceiling and checkout VAT treatment carry a prudent verification notice. |
+| **Piwik PRO** | Enterprise Analytics & CMP Suite | [Privacy & Security Docs &rarr;](https://piwik.pro/privacy-security/) | **2026-11-09** | Cookie and IP masking modes confirmed; starting price carries a prudent checkout notice regarding VAT treatment. |
+| **Matomo Analytics** | Self-Hosted & Cloud Analytics | [Privacy Configuration FAQ &rarr;](https://matomo.org/faq/general/configure-privacy-settings-in-matomo/) | **2026-11-09** | On-Premise and Cloud technical settings confirmed; Cloud entry pricing displays a currency comparison note (USD vs. EUR excl. tax). |
+| **Google Analytics 4** | Traditional Behavioral Baseline | [EU Data & Privacy Help &rarr;](https://support.google.com/analytics/answer/12017362) | **2026-11-09** | Standard tier is free ($0); Google Analytics 360 enterprise tier is available by custom contract quote only. |
 
 ### Editorial Quality Gate & Prudent Disclosure Rules
 * **90-Day Freshness Requirement:** Every software specification and framework guide on this portal is tied to an explicit verification date. If any underlying technical specification exceeds **90 days** without human re-verification against the vendor's primary documentation, the affected report is automatically removed from search engine indexing until re-audited.
@@ -29,7 +29,7 @@ Unlike automated aggregators that repeat unverified marketing claims, our techni
 
 ## 2. Frontend Framework Integration Research
 
-Our implementation guides evaluate script loading strategies, Single-Page Application (SPA) route transition tracking, and Content Security Policy (CSP) directives across six modern web architectures audited on **2026-10-27**:
+Our implementation guides evaluate script loading strategies, Single-Page Application (SPA) route transition tracking, and Content Security Policy (CSP) directives across six modern web architectures audited on **2026-11-09**:
 * **Next.js (App Router)** — [Official Script Optimization Guide](https://nextjs.org/docs/app/guides/scripts)
 * **React 19 (Vite / SPA & SSR)** — [Official React DOM `<script>` Reference](https://react.dev/reference/react-dom/components/script)
 * **Astro (Static, Islands & View Transitions)** — [Official Client-Side Scripts Guide](https://docs.astro.build/en/guides/client-side-scripts/)
@@ -46,7 +46,7 @@ Rather than relying on automated technology-fingerprinting libraries whose activ
 
 To help engineering and privacy teams monitor primary regulatory publications without issuing legal interpretations, our regulatory digest syndicates official XML feeds from European supervisory authorities.
 
-### A. Active Institutional Syndication Sources (Verified on `2026-10-28`)
+### A. Active Institutional Syndication Sources (Verified on `2026-11-09`)
 
 | Supervisory Authority | Official Syndication Feed | Reuse License & Attribution Standard |
 | :--- | :--- | :--- |
@@ -58,7 +58,7 @@ To help engineering and privacy teams monitor primary regulatory publications wi
 
 In accordance with our strict **Zero HTML Scraping** policy and infrastructure Acceptable Use Policies, we never bypass institutional firewalls or scrape web pages when an XML feed is unavailable:
 
-| Supervisory Authority | Examined Portal | Verification Status (`2026-10-28`) | Operational Policy |
+| Supervisory Authority | Examined Portal | Verification Status (`2026-11-09`) | Operational Policy |
 | :--- | :--- | :--- | :--- |
 | **EDPS** (European Data Protection Supervisor) | [EDPS Official Portal &rarr;](https://www.edps.europa.eu/_en) | Automated cloud runner requests receive `HTTP 403 Forbidden` from the institutional firewall. | Excluded from automated syndication; we never attempt to circumvent institutional firewall rules. |
 | **UK ICO** (Information Commissioner's Office) | [ICO RSS Feeds Notice &rarr;](https://ico.org.uk/global/rss-feeds/news-and-blogs/) | RSS syndication is officially disabled by the ICO following a portal redesign (returns an HTML notice page). | Excluded from automated XML syndication; no HTML scraping is performed. |

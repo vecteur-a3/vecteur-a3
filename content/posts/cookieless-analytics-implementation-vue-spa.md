@@ -11,7 +11,7 @@ has_ambiguous_fields: true
 image: /images/default-cover.svg
 keyword: Vue 3 & Nuxt SSR
 last_verified: '2026-11-09'
-lastmod: '2026-11-09T02:46:12Z'
+lastmod: '2026-11-09T05:10:27Z'
 lien_affiliation_principal: https://www.simpleanalytics.com/
 not_legal_advice: Technical comparison only — Not legal advice.
 official_source_url: https://docs.simpleanalytics.com/data-security-and-ownership
@@ -91,7 +91,7 @@ The following table compares three real-world analytics platforms from our curat
 ### Primary Documentation Sources & Verification Notes
 
 - **Simple Analytics** ([Official Documentation](https://docs.simpleanalytics.com/data-security-and-ownership) — *last verified 2026-11-09*): **Data Retention:** 30 days on the Free plan (older data auto-deleted); on paid plans, encrypted data is retained per subscription tier while account is active and permanently deleted 90 days after account deletion (per vendor docs). **Pricing Note:** See vendor pricing page (Free plan at $0 (1 user, 5 sites, 30-day history); Paid plans from $20/month (100k pageviews, 1 user included, +$20/month per additional user, monthly or annual billing with 2 months free; VAT treatment not stated on the pricing page)).
-- **Plausible Analytics** ([Official Documentation](https://plausible.io/data-policy) — *last verified 2026-11-09*): **Data Retention:** No retention limit on Starter, Growth, and Business plans until user deletes site or account; daily cryptographic salt is rotated and deleted every 24 hours; encrypted backups kept for 30 days (per vendor docs). **Pricing Note:** Starter plan at $9/month (USD, up to 10k monthly pageviews, monthly or annual billing with 2 months free; VAT excluded and calculated at checkout by Paddle, verified 2026-10-27).
+- **Plausible Analytics** ([Official Documentation](https://plausible.io/data-policy) — *last verified 2026-11-09*): **Data Retention:** No retention limit on Starter, Growth, and Business plans until user deletes site or account; daily cryptographic salt is rotated and deleted every 24 hours; encrypted backups kept for 30 days (per vendor docs). **Pricing Note:** Starter plan at $9/month (USD, up to 10k monthly pageviews, monthly or annual billing with 2 months free; VAT excluded and calculated at checkout by Paddle, verified 2026-11-09).
 - **Matomo Analytics** ([Official Documentation](https://matomo.org/faq/general/configure-privacy-settings-in-matomo/) — *last verified 2026-11-09*): **Data Retention:** Matomo Cloud Business retains raw visit logs for up to 24 months (capped at 759 days in CNIL compliance mode) and aggregated reports forever; Matomo On-Premise retention is fully configurable by the administrator (per vendor docs). **Pricing Note:** See vendor pricing page (Matomo On-Premise Community is Free (€0 forever; Team bundle from €275/month or €230/month billed annually); Matomo Cloud Business displays two different entry amounts on matomo.org/pricing/ depending on currency/table (USD 26/month excl. tax vs EUR 29/mont...).
 - **Vue 3 (Vite / SPA & Nuxt SSR) Integration Reference** ([Official Framework Docs](https://docs.simpleanalytics.com/install-simple-analytics-with-vue) — *last verified 2026-11-09*).
 

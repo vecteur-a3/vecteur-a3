@@ -193,7 +193,7 @@ def sanitize_external_url(raw_url):
 def format_prudent_price(tool, for_table=True):
     """Formulation prudente lorsque starting_price est null (_a_verifier: true)."""
     raw_price = tool.get("starting_price")
-    verif_date = tool.get("last_verified", "2026-10-27")
+    verif_date = tool.get("last_verified", "2026-11-09")
     if raw_price:
         return sanitize_third_party_text(raw_price, 140 if for_table else 260)
 
@@ -211,7 +211,7 @@ def format_prudent_price(tool, for_table=True):
 def format_prudent_retention(tool):
     """Formulation prudente lorsque data_retention est null."""
     raw_ret = tool.get("data_retention")
-    verif_date = tool.get("last_verified", "2026-10-27")
+    verif_date = tool.get("last_verified", "2026-11-09")
     if raw_ret:
         return sanitize_third_party_text(raw_ret, 240)
 
@@ -325,7 +325,7 @@ def build_real_decoy_table(tool_target, tool_alt, tool_decoy):
 
         rows.append(f"| {name_cell} | {cookies} | {ip_mode} | {region} | {price} | {src_cell} |")
 
-    latest_verif = max(t.get("last_verified", "2026-10-27") for t in [tool_target, tool_alt, tool_decoy])
+    latest_verif = max(t.get("last_verified", "2026-11-09") for t in [tool_target, tool_alt, tool_decoy])
     pricing_footnote = (
         f"\n*Pricing & Tax Notice: Prices and plan parameters are reported as of **{latest_verif}**; "
         f"tax/VAT treatment may vary by jurisdiction at checkout. Where a starting price displays "
@@ -355,7 +355,7 @@ def build_sources_and_ambiguity_notes_md(tools_list, context_item=None, page_cat
 
         t_name = sanitize_third_party_text(t.get("name", "Tool"), 60)
         src_url = sanitize_external_url(t.get("source_url", ""))
-        verif_d = sanitize_third_party_text(t.get("last_verified", "2026-10-27"), 15)
+        verif_d = sanitize_third_party_text(t.get("last_verified", "2026-11-09"), 15)
         retention_str = format_prudent_retention(t)
         price_str = format_prudent_price(t, for_table=False)
 
@@ -367,7 +367,7 @@ def build_sources_and_ambiguity_notes_md(tools_list, context_item=None, page_cat
     if page_category == "framework_guide" and isinstance(context_item, dict):
         fw_name = sanitize_third_party_text(context_item.get("name", "Framework"), 60)
         fw_url = sanitize_external_url(context_item.get("official_docs_url", ""))
-        fw_verif = sanitize_third_party_text(context_item.get("last_verified", "2026-10-27"), 15)
+        fw_verif = sanitize_third_party_text(context_item.get("last_verified", "2026-11-09"), 15)
         lines.append(
             f"- **{fw_name} Integration Reference** ([Official Framework Docs]({fw_url}) — *last verified {fw_verif}*)."
         )
@@ -484,7 +484,7 @@ def generate_aida_markdown_a3(blueprint, image_url):
     if cat == "framework_guide":
         fw_name = sanitize_third_party_text(ctx.get("name", "Modern Frontend Framework"), 60)
         fw_docs = sanitize_external_url(ctx.get("official_docs_url", ""))
-        fw_verif = sanitize_third_party_text(ctx.get("last_verified", "2026-10-27"), 15)
+        fw_verif = sanitize_third_party_text(ctx.get("last_verified", "2026-11-09"), 15)
         csp_formatted = format_prudent_csp(ctx)
 
         aida_lines = [
@@ -519,7 +519,7 @@ When integrating a web analytics script into **{fw_name}** (*{sanitize_third_par
         ]
         for item in reg_list[:15]:
             auth_name = sanitize_third_party_text(item.get("authority_name", "Data Protection Authority"), 80)
-            pub_date = sanitize_third_party_text((item.get("published_date", "") or "")[:10], 15) or item.get("last_verified", "2026-10-28")
+            pub_date = sanitize_third_party_text((item.get("published_date", "") or "")[:10], 15) or item.get("last_verified", "2026-11-09")
             exact_title = preserve_exact_official_title(item.get("title", "Official Publication"))
             off_url = sanitize_external_url(item.get("official_url", ""))
             lic_name = sanitize_third_party_text(item.get("license", "Official Reuse License"), 90)
@@ -715,7 +715,7 @@ def build_frontmatter_sources_and_attributions(blueprint):
             sources_list.append({
                 "name": t.get("name", ""),
                 "url": sanitize_external_url(t.get("source_url", "")),
-                "last_verified": t.get("last_verified", "2026-10-27"),
+                "last_verified": t.get("last_verified", "2026-11-09"),
                 "ambiguous_fields": bool(t.get("_a_verifier", False))
             })
 
@@ -723,7 +723,7 @@ def build_frontmatter_sources_and_attributions(blueprint):
         sources_list.append({
             "name": f"{ctx.get('name', 'Framework')} Official Documentation",
             "url": sanitize_external_url(ctx.get("official_docs_url", "")),
-            "last_verified": ctx.get("last_verified", "2026-10-27"),
+            "last_verified": ctx.get("last_verified", "2026-11-09"),
             "ambiguous_fields": bool(ctx.get("_a_verifier", False))
         })
 
@@ -769,7 +769,7 @@ def create_or_update_post(blueprint, status_seo, markdown_content, image_url, is
     target_id = blueprint.get("target_tool_id", "simple-analytics")
     aff = AFFILIATE_CONFIG.get(target_id, AFFILIATE_CONFIG["simple-analytics"])
     tools = blueprint["tools_used"]
-    latest_verif = max(t.get("last_verified", "2026-10-27") for t in tools)
+    latest_verif = max(t.get("last_verified", "2026-11-09") for t in tools)
     primary_source_url = sanitize_external_url(tools[0].get("source_url", ""))
 
     sources_list, attributions_list, has_ambiguous = build_frontmatter_sources_and_attributions(blueprint)

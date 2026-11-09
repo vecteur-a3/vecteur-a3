@@ -11,7 +11,7 @@ has_ambiguous_fields: true
 image: /images/default-cover.svg
 keyword: Astro Static & Islands
 last_verified: '2026-11-09'
-lastmod: '2026-11-09T02:46:12Z'
+lastmod: '2026-11-09T05:10:27Z'
 lien_affiliation_principal: https://www.simpleanalytics.com/
 not_legal_advice: Technical comparison only — Not legal advice.
 official_source_url: https://docs.simpleanalytics.com/data-security-and-ownership
@@ -91,7 +91,7 @@ The following table compares three real-world analytics platforms from our curat
 ### Primary Documentation Sources & Verification Notes
 
 - **Simple Analytics** ([Official Documentation](https://docs.simpleanalytics.com/data-security-and-ownership) — *last verified 2026-11-09*): **Data Retention:** 30 days on the Free plan (older data auto-deleted); on paid plans, encrypted data is retained per subscription tier while account is active and permanently deleted 90 days after account deletion (per vendor docs). **Pricing Note:** See vendor pricing page (Free plan at $0 (1 user, 5 sites, 30-day history); Paid plans from $20/month (100k pageviews, 1 user included, +$20/month per additional user, monthly or annual billing with 2 months free; VAT treatment not stated on the pricing page)).
-- **Plausible Analytics** ([Official Documentation](https://plausible.io/data-policy) — *last verified 2026-11-09*): **Data Retention:** No retention limit on Starter, Growth, and Business plans until user deletes site or account; daily cryptographic salt is rotated and deleted every 24 hours; encrypted backups kept for 30 days (per vendor docs). **Pricing Note:** Starter plan at $9/month (USD, up to 10k monthly pageviews, monthly or annual billing with 2 months free; VAT excluded and calculated at checkout by Paddle, verified 2026-10-27).
+- **Plausible Analytics** ([Official Documentation](https://plausible.io/data-policy) — *last verified 2026-11-09*): **Data Retention:** No retention limit on Starter, Growth, and Business plans until user deletes site or account; daily cryptographic salt is rotated and deleted every 24 hours; encrypted backups kept for 30 days (per vendor docs). **Pricing Note:** Starter plan at $9/month (USD, up to 10k monthly pageviews, monthly or annual billing with 2 months free; VAT excluded and calculated at checkout by Paddle, verified 2026-11-09).
 - **Piwik PRO Analytics Suite** ([Official Documentation](https://piwik.pro/privacy-security/) — *last verified 2026-11-09*): **Data Retention:** 25 months on the Business plan; 25+ months on Enterprise and Healthcare Enterprise plans (per vendor docs). **Pricing Note:** See vendor pricing page (Business plan from €36/month (EUR, up to 2M monthly actions and 20 domains); Enterprise from $25,000/year; Healthcare Enterprise from $30,000/year (VAT treatment not stated on the pricing page)).
 - **Astro (Static, Islands & View Transitions) Integration Reference** ([Official Framework Docs](https://docs.astro.build/en/guides/client-side-scripts/) — *last verified 2026-11-09*).
 
