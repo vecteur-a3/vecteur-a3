@@ -1,7 +1,7 @@
 {
   "_comment": "Généré automatiquement par scripts/ingest_privacy.py pour Vecteur A3",
   "metadata": {
-    "last_run": "2026-11-04T06:36:17.770882+00:00",
+    "last_run": "2026-11-09T02:46:12.533035+00:00",
     "freshness_threshold_days": 90,
     "validated_tools_count": 6,
     "frameworks_count": 6,
@@ -80,7 +80,7 @@
       "best_for": "SaaS & E-commerce teams seeking lightweight EU-hosted cookieless telemetry",
       "vendor_claim_summary": "According to Simple Analytics' official documentation, the script measures pageviews, events, and time-zone country without setting cookies, fingerprinting devices, or storing IP addresses.",
       "source_url": "https://docs.simpleanalytics.com/data-security-and-ownership",
-      "last_verified": "2026-10-27"
+      "last_verified": "2026-11-09"
     },
     {
       "id": "plausible-analytics",
@@ -96,7 +96,7 @@
       "best_for": "Developers wanting open-source transparency or custom event tracking",
       "vendor_claim_summary": "According to Plausible Analytics' official data policy and EU hosting documentation, visitor uniqueness is estimated via a 24-hour salted hash without cookies, and all data stays on European-owned servers.",
       "source_url": "https://plausible.io/data-policy",
-      "last_verified": "2026-10-27"
+      "last_verified": "2026-11-09"
     },
     {
       "_a_verifier": true,
@@ -117,7 +117,7 @@
       "best_for": "Agencies and content sites needing built-in uptime checks and EU routing",
       "vendor_claim_summary": "According to Fathom Analytics' technical data documentation, EU traffic is anonymized on European servers before anonymized event records and SHA-256 visitor signatures are stored on US infrastructure.",
       "source_url": "https://usefathom.com/data",
-      "last_verified": "2026-10-27"
+      "last_verified": "2026-11-09"
     },
     {
       "_a_verifier": true,
@@ -137,7 +137,7 @@
       "best_for": "Large enterprises and healthcare/government teams requiring integrated Consent Management (CMP)",
       "vendor_claim_summary": "According to Piwik PRO's privacy documentation, the suite pairs web analytics with a built-in consent manager, configurable IP byte masking, and optional 30-minute session hashes.",
       "source_url": "https://piwik.pro/privacy-security/",
-      "last_verified": "2026-10-27"
+      "last_verified": "2026-11-09"
     },
     {
       "_a_verifier": true,
@@ -157,7 +157,7 @@
       "best_for": "Organizations needing full raw log ownership on their own MySQL servers",
       "vendor_claim_summary": "According to Matomo's official documentation, administrators can enforce CNIL consent-exemption settings, disable cookies, and mask IP addresses in memory before storage.",
       "source_url": "https://matomo.org/faq/general/configure-privacy-settings-in-matomo/",
-      "last_verified": "2026-10-27"
+      "last_verified": "2026-11-09"
     },
     {
       "_a_verifier": true,
@@ -177,7 +177,7 @@
       "best_for": "Marketing teams heavily reliant on Google Ads bidding and complex consent banners",
       "vendor_claim_summary": "According to Google's official documentation, GA4 collects EU visitor traffic through regional EU servers to discard IP addresses before processing and relies on Consent Mode signals in the EEA.",
       "source_url": "https://support.google.com/analytics/answer/12017362",
-      "last_verified": "2026-10-27"
+      "last_verified": "2026-11-09"
     }
   ],
   "frameworks": [
@@ -192,7 +192,7 @@
       "alt_tool_id": "plausible-analytics",
       "decoy_tool_id": "piwik-pro",
       "official_docs_url": "https://nextjs.org/docs/app/guides/scripts",
-      "last_verified": "2026-10-27"
+      "last_verified": "2026-11-09"
     },
     {
       "id": "react-spa",
@@ -205,7 +205,7 @@
       "alt_tool_id": "fathom-analytics",
       "decoy_tool_id": "matomo-analytics",
       "official_docs_url": "https://react.dev/reference/react-dom/components/script",
-      "last_verified": "2026-10-27"
+      "last_verified": "2026-11-09"
     },
     {
       "id": "astro-static",
@@ -218,7 +218,7 @@
       "alt_tool_id": "plausible-analytics",
       "decoy_tool_id": "piwik-pro",
       "official_docs_url": "https://docs.astro.build/en/guides/client-side-scripts/",
-      "last_verified": "2026-10-27"
+      "last_verified": "2026-11-09"
     },
     {
       "id": "vue-spa",
@@ -231,7 +231,7 @@
       "alt_tool_id": "plausible-analytics",
       "decoy_tool_id": "matomo-analytics",
       "official_docs_url": "https://docs.simpleanalytics.com/install-simple-analytics-with-vue",
-      "last_verified": "2026-10-27"
+      "last_verified": "2026-11-09"
     },
     {
       "id": "remix-ssr",
@@ -244,7 +244,7 @@
       "alt_tool_id": "plausible-analytics",
       "decoy_tool_id": "piwik-pro",
       "official_docs_url": "https://v2.remix.run/docs/components/scripts/",
-      "last_verified": "2026-10-27"
+      "last_verified": "2026-11-09"
     },
     {
       "_a_verifier": true,
@@ -261,7 +261,7 @@
       "alt_tool_id": "plausible-analytics",
       "decoy_tool_id": "fathom-analytics",
       "official_docs_url": "https://shopify.dev/docs/api/web-pixels-api",
-      "last_verified": "2026-10-27"
+      "last_verified": "2026-11-09"
     }
   ],
   "regulatory_updates": [
@@ -278,11 +278,11 @@
       "official_url": "https://www.edpb.europa.eu/news/norwegian-dpa-fines-xandr-eur-8-600-000-for-unlawful-processing-of-personal-data_en",
       "license": "EDPB Legal Notice (Commercial & non-commercial reuse authorized with source acknowledgement)",
       "license_url": "https://www.edpb.europa.eu/copyright_en",
-      "attribution_text": "Source: European Data Protection Board (EDPB) - https://www.edpb.europa.eu (Extracted on 04/11/2026, EDPB Legal Notice: https://www.edpb.europa.eu/copyright_en)",
+      "attribution_text": "Source: European Data Protection Board (EDPB) - https://www.edpb.europa.eu (Extracted on 09/11/2026, EDPB Legal Notice: https://www.edpb.europa.eu/copyright_en)",
       "display_policy": "title_link_attribution_only",
-      "extraction_date_ddmmyyyy": "04/11/2026",
+      "extraction_date_ddmmyyyy": "09/11/2026",
       "feed_test_status": "VERIFIED_HTTP_200_XML_RUNNER",
-      "last_verified": "2026-11-04"
+      "last_verified": "2026-11-09"
     },
     {
       "id": "dpa-edpb-news-2",
@@ -297,11 +297,11 @@
       "official_url": "https://www.edpb.europa.eu/news/edpb-publishes-statement-on-the-data-protection-challenges-of-smart-glasses_en",
       "license": "EDPB Legal Notice (Commercial & non-commercial reuse authorized with source acknowledgement)",
       "license_url": "https://www.edpb.europa.eu/copyright_en",
-      "attribution_text": "Source: European Data Protection Board (EDPB) - https://www.edpb.europa.eu (Extracted on 04/11/2026, EDPB Legal Notice: https://www.edpb.europa.eu/copyright_en)",
+      "attribution_text": "Source: European Data Protection Board (EDPB) - https://www.edpb.europa.eu (Extracted on 09/11/2026, EDPB Legal Notice: https://www.edpb.europa.eu/copyright_en)",
       "display_policy": "title_link_attribution_only",
-      "extraction_date_ddmmyyyy": "04/11/2026",
+      "extraction_date_ddmmyyyy": "09/11/2026",
       "feed_test_status": "VERIFIED_HTTP_200_XML_RUNNER",
-      "last_verified": "2026-11-04"
+      "last_verified": "2026-11-09"
     },
     {
       "id": "dpa-edpb-news-3",
@@ -316,11 +316,11 @@
       "official_url": "https://www.edpb.europa.eu/news/italian-dpa-fines-iqvia-eur-7-000-000-for-unlawful-processing-of-patients-health-data_en",
       "license": "EDPB Legal Notice (Commercial & non-commercial reuse authorized with source acknowledgement)",
       "license_url": "https://www.edpb.europa.eu/copyright_en",
-      "attribution_text": "Source: European Data Protection Board (EDPB) - https://www.edpb.europa.eu (Extracted on 04/11/2026, EDPB Legal Notice: https://www.edpb.europa.eu/copyright_en)",
+      "attribution_text": "Source: European Data Protection Board (EDPB) - https://www.edpb.europa.eu (Extracted on 09/11/2026, EDPB Legal Notice: https://www.edpb.europa.eu/copyright_en)",
       "display_policy": "title_link_attribution_only",
-      "extraction_date_ddmmyyyy": "04/11/2026",
+      "extraction_date_ddmmyyyy": "09/11/2026",
       "feed_test_status": "VERIFIED_HTTP_200_XML_RUNNER",
-      "last_verified": "2026-11-04"
+      "last_verified": "2026-11-09"
     },
     {
       "id": "dpa-edpb-news-4",
@@ -335,11 +335,11 @@
       "official_url": "https://www.edpb.europa.eu/news/italian-dpa-fines-security-company-eur-39-000-for-violations-concerning-employees-data_en",
       "license": "EDPB Legal Notice (Commercial & non-commercial reuse authorized with source acknowledgement)",
       "license_url": "https://www.edpb.europa.eu/copyright_en",
-      "attribution_text": "Source: European Data Protection Board (EDPB) - https://www.edpb.europa.eu (Extracted on 04/11/2026, EDPB Legal Notice: https://www.edpb.europa.eu/copyright_en)",
+      "attribution_text": "Source: European Data Protection Board (EDPB) - https://www.edpb.europa.eu (Extracted on 09/11/2026, EDPB Legal Notice: https://www.edpb.europa.eu/copyright_en)",
       "display_policy": "title_link_attribution_only",
-      "extraction_date_ddmmyyyy": "04/11/2026",
+      "extraction_date_ddmmyyyy": "09/11/2026",
       "feed_test_status": "VERIFIED_HTTP_200_XML_RUNNER",
-      "last_verified": "2026-11-04"
+      "last_verified": "2026-11-09"
     },
     {
       "id": "dpa-edpb-news-5",
@@ -354,11 +354,11 @@
       "official_url": "https://www.edpb.europa.eu/news/italian-dpa-fines-emirates-eur-180-000-for-infringements-concerning-passengers-health-data_en",
       "license": "EDPB Legal Notice (Commercial & non-commercial reuse authorized with source acknowledgement)",
       "license_url": "https://www.edpb.europa.eu/copyright_en",
-      "attribution_text": "Source: European Data Protection Board (EDPB) - https://www.edpb.europa.eu (Extracted on 04/11/2026, EDPB Legal Notice: https://www.edpb.europa.eu/copyright_en)",
+      "attribution_text": "Source: European Data Protection Board (EDPB) - https://www.edpb.europa.eu (Extracted on 09/11/2026, EDPB Legal Notice: https://www.edpb.europa.eu/copyright_en)",
       "display_policy": "title_link_attribution_only",
-      "extraction_date_ddmmyyyy": "04/11/2026",
+      "extraction_date_ddmmyyyy": "09/11/2026",
       "feed_test_status": "VERIFIED_HTTP_200_XML_RUNNER",
-      "last_verified": "2026-11-04"
+      "last_verified": "2026-11-09"
     },
     {
       "id": "dpa-edpb-publications-1",
@@ -373,11 +373,11 @@
       "official_url": "https://www.edpb.europa.eu/documents/reports-statements-and-letters/contribution-of-the-edpb-to-the-european-commissions-0_en",
       "license": "EDPB Legal Notice (Commercial & non-commercial reuse authorized with source acknowledgement)",
       "license_url": "https://www.edpb.europa.eu/copyright_en",
-      "attribution_text": "Source: European Data Protection Board (EDPB) - https://www.edpb.europa.eu (Extracted on 04/11/2026, EDPB Legal Notice: https://www.edpb.europa.eu/copyright_en)",
+      "attribution_text": "Source: European Data Protection Board (EDPB) - https://www.edpb.europa.eu (Extracted on 09/11/2026, EDPB Legal Notice: https://www.edpb.europa.eu/copyright_en)",
       "display_policy": "title_link_attribution_only",
-      "extraction_date_ddmmyyyy": "04/11/2026",
+      "extraction_date_ddmmyyyy": "09/11/2026",
       "feed_test_status": "VERIFIED_HTTP_200_XML_RUNNER",
-      "last_verified": "2026-11-04"
+      "last_verified": "2026-11-09"
     },
     {
       "id": "dpa-edpb-publications-2",
@@ -392,11 +392,11 @@
       "official_url": "https://www.edpb.europa.eu/documents/opinion-of-the-board-art-64/opinion-272026-on-the-draft-decision-of-the-irish-supervisory_en",
       "license": "EDPB Legal Notice (Commercial & non-commercial reuse authorized with source acknowledgement)",
       "license_url": "https://www.edpb.europa.eu/copyright_en",
-      "attribution_text": "Source: European Data Protection Board (EDPB) - https://www.edpb.europa.eu (Extracted on 04/11/2026, EDPB Legal Notice: https://www.edpb.europa.eu/copyright_en)",
+      "attribution_text": "Source: European Data Protection Board (EDPB) - https://www.edpb.europa.eu (Extracted on 09/11/2026, EDPB Legal Notice: https://www.edpb.europa.eu/copyright_en)",
       "display_policy": "title_link_attribution_only",
-      "extraction_date_ddmmyyyy": "04/11/2026",
+      "extraction_date_ddmmyyyy": "09/11/2026",
       "feed_test_status": "VERIFIED_HTTP_200_XML_RUNNER",
-      "last_verified": "2026-11-04"
+      "last_verified": "2026-11-09"
     },
     {
       "id": "dpa-edpb-publications-3",
@@ -411,11 +411,11 @@
       "official_url": "https://www.edpb.europa.eu/documents/opinion-of-the-board-art-64/opinion-282026-on-the-draft-decision-of-the-irish-supervisory_en",
       "license": "EDPB Legal Notice (Commercial & non-commercial reuse authorized with source acknowledgement)",
       "license_url": "https://www.edpb.europa.eu/copyright_en",
-      "attribution_text": "Source: European Data Protection Board (EDPB) - https://www.edpb.europa.eu (Extracted on 04/11/2026, EDPB Legal Notice: https://www.edpb.europa.eu/copyright_en)",
+      "attribution_text": "Source: European Data Protection Board (EDPB) - https://www.edpb.europa.eu (Extracted on 09/11/2026, EDPB Legal Notice: https://www.edpb.europa.eu/copyright_en)",
       "display_policy": "title_link_attribution_only",
-      "extraction_date_ddmmyyyy": "04/11/2026",
+      "extraction_date_ddmmyyyy": "09/11/2026",
       "feed_test_status": "VERIFIED_HTTP_200_XML_RUNNER",
-      "last_verified": "2026-11-04"
+      "last_verified": "2026-11-09"
     },
     {
       "id": "dpa-edpb-publications-4",
@@ -430,11 +430,11 @@
       "official_url": "https://www.edpb.europa.eu/documents/opinion-of-the-board-art-64/opinion-262026-on-the-draft-decision-of-the-dutch-supervisory_en",
       "license": "EDPB Legal Notice (Commercial & non-commercial reuse authorized with source acknowledgement)",
       "license_url": "https://www.edpb.europa.eu/copyright_en",
-      "attribution_text": "Source: European Data Protection Board (EDPB) - https://www.edpb.europa.eu (Extracted on 04/11/2026, EDPB Legal Notice: https://www.edpb.europa.eu/copyright_en)",
+      "attribution_text": "Source: European Data Protection Board (EDPB) - https://www.edpb.europa.eu (Extracted on 09/11/2026, EDPB Legal Notice: https://www.edpb.europa.eu/copyright_en)",
       "display_policy": "title_link_attribution_only",
-      "extraction_date_ddmmyyyy": "04/11/2026",
+      "extraction_date_ddmmyyyy": "09/11/2026",
       "feed_test_status": "VERIFIED_HTTP_200_XML_RUNNER",
-      "last_verified": "2026-11-04"
+      "last_verified": "2026-11-09"
     },
     {
       "id": "dpa-edpb-publications-5",
@@ -449,11 +449,11 @@
       "official_url": "https://www.edpb.europa.eu/documents/opinion-of-the-board-art-64/opinion-252026-on-the-draft-decision-of-the-dutch-supervisory_en",
       "license": "EDPB Legal Notice (Commercial & non-commercial reuse authorized with source acknowledgement)",
       "license_url": "https://www.edpb.europa.eu/copyright_en",
-      "attribution_text": "Source: European Data Protection Board (EDPB) - https://www.edpb.europa.eu (Extracted on 04/11/2026, EDPB Legal Notice: https://www.edpb.europa.eu/copyright_en)",
+      "attribution_text": "Source: European Data Protection Board (EDPB) - https://www.edpb.europa.eu (Extracted on 09/11/2026, EDPB Legal Notice: https://www.edpb.europa.eu/copyright_en)",
       "display_policy": "title_link_attribution_only",
-      "extraction_date_ddmmyyyy": "04/11/2026",
+      "extraction_date_ddmmyyyy": "09/11/2026",
       "feed_test_status": "VERIFIED_HTTP_200_XML_RUNNER",
-      "last_verified": "2026-11-04"
+      "last_verified": "2026-11-09"
     },
     {
       "id": "dpa-cnil-en-1",
@@ -462,17 +462,17 @@
       "short_authority": "CNIL",
       "jurisdiction": "France / European Union",
       "language": "en",
-      "title": "Cookies et application mobile : sanctions de 7 millions d’euros à l’encontre des sociétés FNAC DARTY PARTICIPATIONS ET SERVICES et FNAC DIRECT",
-      "published_date": "2026-10-29T12:00:00+00:00",
+      "title": "Recherches internes : quelles sont les obligations pour les professionnels de santé ?",
+      "published_date": "2026-11-06T12:00:00+00:00",
       "summary_short": "",
-      "official_url": "https://www.cnil.fr/fr/sanction-cookies-app-fnac",
+      "official_url": "https://www.cnil.fr/fr/recherches-internes-sante-quelles-obligations",
       "license": "CC-BY-ND 4.0 FR (NoDerivatives - Pas de modifications)",
       "license_url": "https://creativecommons.org/licenses/by-nd/4.0/deed.fr",
-      "attribution_text": "Source : CNIL – https://www.cnil.fr (Extrait le 04/11/2026, licence CC-BY-ND 4.0 FR : https://creativecommons.org/licenses/by-nd/4.0/deed.fr)",
+      "attribution_text": "Source : CNIL – https://www.cnil.fr (Extrait le 09/11/2026, licence CC-BY-ND 4.0 FR : https://creativecommons.org/licenses/by-nd/4.0/deed.fr)",
       "display_policy": "strict_no_derivatives_title_only",
-      "extraction_date_ddmmyyyy": "04/11/2026",
+      "extraction_date_ddmmyyyy": "09/11/2026",
       "feed_test_status": "VERIFIED_HTTP_200_XML_RUNNER",
-      "last_verified": "2026-11-04"
+      "last_verified": "2026-11-09"
     },
     {
       "id": "dpa-cnil-en-2",
@@ -481,17 +481,17 @@
       "short_authority": "CNIL",
       "jurisdiction": "France / European Union",
       "language": "en",
-      "title": "Ordre du jour de la séance plénière du 22 octobre 2026",
-      "published_date": "2026-10-22T12:00:00+00:00",
+      "title": "Ordre du jour de la séance plénière du 5 novembre 2026",
+      "published_date": "2026-11-05T12:00:00+00:00",
       "summary_short": "",
-      "official_url": "https://www.cnil.fr/fr/ordre-du-jour-de-la-seance-pleniere-du-22-octobre-2026",
+      "official_url": "https://www.cnil.fr/fr/ordre-du-jour-de-la-seance-pleniere-du-5-novembre-2026",
       "license": "CC-BY-ND 4.0 FR (NoDerivatives - Pas de modifications)",
       "license_url": "https://creativecommons.org/licenses/by-nd/4.0/deed.fr",
-      "attribution_text": "Source : CNIL – https://www.cnil.fr (Extrait le 04/11/2026, licence CC-BY-ND 4.0 FR : https://creativecommons.org/licenses/by-nd/4.0/deed.fr)",
+      "attribution_text": "Source : CNIL – https://www.cnil.fr (Extrait le 09/11/2026, licence CC-BY-ND 4.0 FR : https://creativecommons.org/licenses/by-nd/4.0/deed.fr)",
       "display_policy": "strict_no_derivatives_title_only",
-      "extraction_date_ddmmyyyy": "04/11/2026",
+      "extraction_date_ddmmyyyy": "09/11/2026",
       "feed_test_status": "VERIFIED_HTTP_200_XML_RUNNER",
-      "last_verified": "2026-11-04"
+      "last_verified": "2026-11-09"
     },
     {
       "id": "dpa-cnil-en-3",
@@ -500,17 +500,17 @@
       "short_authority": "CNIL",
       "jurisdiction": "France / European Union",
       "language": "en",
-      "title": "Journée RGPD à Poitiers : cybersécurité, IA et conformité au cœur des enjeux de protection des données",
-      "published_date": "2026-10-20T12:00:00+00:00",
+      "title": "Rejeu de session : ces outils qui enregistrent votre activité en ligne",
+      "published_date": "2026-11-05T12:00:00+00:00",
       "summary_short": "",
-      "official_url": "https://www.cnil.fr/fr/journee-rgpd-2026-poitiers",
+      "official_url": "https://www.cnil.fr/fr/rejeu-de-session-vos-droits",
       "license": "CC-BY-ND 4.0 FR (NoDerivatives - Pas de modifications)",
       "license_url": "https://creativecommons.org/licenses/by-nd/4.0/deed.fr",
-      "attribution_text": "Source : CNIL – https://www.cnil.fr (Extrait le 04/11/2026, licence CC-BY-ND 4.0 FR : https://creativecommons.org/licenses/by-nd/4.0/deed.fr)",
+      "attribution_text": "Source : CNIL – https://www.cnil.fr (Extrait le 09/11/2026, licence CC-BY-ND 4.0 FR : https://creativecommons.org/licenses/by-nd/4.0/deed.fr)",
       "display_policy": "strict_no_derivatives_title_only",
-      "extraction_date_ddmmyyyy": "04/11/2026",
+      "extraction_date_ddmmyyyy": "09/11/2026",
       "feed_test_status": "VERIFIED_HTTP_200_XML_RUNNER",
-      "last_verified": "2026-11-04"
+      "last_verified": "2026-11-09"
     },
     {
       "id": "dpa-cnil-en-4",
@@ -519,17 +519,17 @@
       "short_authority": "CNIL",
       "jurisdiction": "France / European Union",
       "language": "en",
-      "title": "Revoir le webinaire - Nouveau régime de la prospection téléphonique : comment et quand recueillir le consentement de la personne concernée ?",
-      "published_date": "2026-10-19T12:00:00+00:00",
+      "title": "Outils de rejeu de session : la CNIL publie sa recommandation pour guider les acteurs",
+      "published_date": "2026-11-05T12:00:00+00:00",
       "summary_short": "",
-      "official_url": "https://www.cnil.fr/fr/webinaire-demarchage-telephonique",
+      "official_url": "https://www.cnil.fr/fr/rejeu-de-session-recommandation",
       "license": "CC-BY-ND 4.0 FR (NoDerivatives - Pas de modifications)",
       "license_url": "https://creativecommons.org/licenses/by-nd/4.0/deed.fr",
-      "attribution_text": "Source : CNIL – https://www.cnil.fr (Extrait le 04/11/2026, licence CC-BY-ND 4.0 FR : https://creativecommons.org/licenses/by-nd/4.0/deed.fr)",
+      "attribution_text": "Source : CNIL – https://www.cnil.fr (Extrait le 09/11/2026, licence CC-BY-ND 4.0 FR : https://creativecommons.org/licenses/by-nd/4.0/deed.fr)",
       "display_policy": "strict_no_derivatives_title_only",
-      "extraction_date_ddmmyyyy": "04/11/2026",
+      "extraction_date_ddmmyyyy": "09/11/2026",
       "feed_test_status": "VERIFIED_HTTP_200_XML_RUNNER",
-      "last_verified": "2026-11-04"
+      "last_verified": "2026-11-09"
     },
     {
       "id": "dpa-cnil-en-5",
@@ -538,17 +538,17 @@
       "short_authority": "CNIL",
       "jurisdiction": "France / European Union",
       "language": "en",
-      "title": "De la protection des données à la création de valeur en finance : des autorités européennes publient une étude et des bonnes pratiques",
-      "published_date": "2026-10-16T12:00:00+00:00",
+      "title": "Privacy for Kids : le CEPD lance une plateforme dédiée à la vie privée des enfants",
+      "published_date": "2026-11-04T12:00:00+00:00",
       "summary_short": "",
-      "official_url": "https://www.cnil.fr/fr/protection-donnees-valeur-finance-etude-autorites-europeennes",
+      "official_url": "https://www.cnil.fr/fr/cepd-privacy-for-kids",
       "license": "CC-BY-ND 4.0 FR (NoDerivatives - Pas de modifications)",
       "license_url": "https://creativecommons.org/licenses/by-nd/4.0/deed.fr",
-      "attribution_text": "Source : CNIL – https://www.cnil.fr (Extrait le 04/11/2026, licence CC-BY-ND 4.0 FR : https://creativecommons.org/licenses/by-nd/4.0/deed.fr)",
+      "attribution_text": "Source : CNIL – https://www.cnil.fr (Extrait le 09/11/2026, licence CC-BY-ND 4.0 FR : https://creativecommons.org/licenses/by-nd/4.0/deed.fr)",
       "display_policy": "strict_no_derivatives_title_only",
-      "extraction_date_ddmmyyyy": "04/11/2026",
+      "extraction_date_ddmmyyyy": "09/11/2026",
       "feed_test_status": "VERIFIED_HTTP_200_XML_RUNNER",
-      "last_verified": "2026-11-04"
+      "last_verified": "2026-11-09"
     }
   ]
 }

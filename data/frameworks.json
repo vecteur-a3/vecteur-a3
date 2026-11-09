@@ -1,6 +1,6 @@
 {
   "_comment": "Chemin exact : data/frameworks.json",
-  "_note_wappalyzer": "Remplace l'usage direct du dépôt historique AliasIO/wappalyzer (déprécié et passé en privé en août 2023 sous licence GPL-3.0). Le fork communautaire actif enthec/webappanalyzer est formellement sous licence GPL-3.0 (et non MIT, vérifié le 2026-10-27 sur github.com/enthec/webappanalyzer). Le projet conserve donc exclusivement cette matrice locale curée (zéro scraping HTML, zéro contamination GPL-3.0).",
+  "_note_wappalyzer": "Remplace l'usage direct du dépôt historique AliasIO/wappalyzer (déprécié et passé en privé en août 2023 sous licence GPL-3.0). Le fork communautaire actif enthec/webappanalyzer est formellement sous licence GPL-3.0 (et non MIT, vérifié le 2026-11-09 sur github.com/enthec/webappanalyzer). Le projet conserve donc exclusivement cette matrice locale curée (zéro scraping HTML, zéro contamination GPL-3.0).",
   "frameworks": [
     {
       "id": "nextjs-ecommerce",
@@ -13,7 +13,7 @@
       "alt_tool_id": "plausible-analytics",
       "decoy_tool_id": "piwik-pro",
       "official_docs_url": "https://nextjs.org/docs/app/guides/scripts",
-      "last_verified": "2026-10-27"
+      "last_verified": "2026-11-09"
     },
     {
       "id": "react-spa",
@@ -26,7 +26,7 @@
       "alt_tool_id": "fathom-analytics",
       "decoy_tool_id": "matomo-analytics",
       "official_docs_url": "https://react.dev/reference/react-dom/components/script",
-      "last_verified": "2026-10-27"
+      "last_verified": "2026-11-09"
     },
     {
       "id": "astro-static",
@@ -39,7 +39,7 @@
       "alt_tool_id": "plausible-analytics",
       "decoy_tool_id": "piwik-pro",
       "official_docs_url": "https://docs.astro.build/en/guides/client-side-scripts/",
-      "last_verified": "2026-10-27"
+      "last_verified": "2026-11-09"
     },
     {
       "id": "vue-spa",
@@ -52,7 +52,7 @@
       "alt_tool_id": "plausible-analytics",
       "decoy_tool_id": "matomo-analytics",
       "official_docs_url": "https://docs.simpleanalytics.com/install-simple-analytics-with-vue",
-      "last_verified": "2026-10-27"
+      "last_verified": "2026-11-09"
     },
     {
       "id": "remix-ssr",
@@ -65,7 +65,7 @@
       "alt_tool_id": "plausible-analytics",
       "decoy_tool_id": "piwik-pro",
       "official_docs_url": "https://v2.remix.run/docs/components/scripts/",
-      "last_verified": "2026-10-27"
+      "last_verified": "2026-11-09"
     },
     {
       "_a_verifier": true,
@@ -82,7 +82,7 @@
       "alt_tool_id": "plausible-analytics",
       "decoy_tool_id": "fathom-analytics",
       "official_docs_url": "https://shopify.dev/docs/api/web-pixels-api",
-      "last_verified": "2026-10-27"
+      "last_verified": "2026-11-09"
     }
   ]
 }

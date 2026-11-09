@@ -1,6 +1,6 @@
 {
   "_comment": "Chemin exact : data/tools.json",
-  "_avertissement": "Données vérifiées sur sources primaires le 2026-10-27. Les champs dont une composante (ex: mention TVA sur la page tarifaire, conflit de devises ou plafond de rétention) n'est pas explicite dans la documentation primaire sont à null avec _a_verifier: true. Aucun avis juridique (YMYL).",
+  "_avertissement": "Données vérifiées sur sources primaires le 2026-11-09. Les champs dont une composante (ex: mention TVA sur la page tarifaire, conflit de devises ou plafond de rétention) n'est pas explicite dans la documentation primaire sont à null avec _a_verifier: true. Aucun avis juridique (YMYL).",
   "metadata": {
     "schema_version": "1.0",
     "freshness_threshold_days": 90
@@ -25,7 +25,7 @@
       "best_for": "SaaS & E-commerce teams seeking lightweight EU-hosted cookieless telemetry",
       "vendor_claim_summary": "According to Simple Analytics' official documentation, the script measures pageviews, events, and time-zone country without setting cookies, fingerprinting devices, or storing IP addresses.",
       "source_url": "https://docs.simpleanalytics.com/data-security-and-ownership",
-      "last_verified": "2026-10-27"
+      "last_verified": "2026-11-09"
     },
     {
       "id": "plausible-analytics",
@@ -41,7 +41,7 @@
       "best_for": "Developers wanting open-source transparency or custom event tracking",
       "vendor_claim_summary": "According to Plausible Analytics' official data policy and EU hosting documentation, visitor uniqueness is estimated via a 24-hour salted hash without cookies, and all data stays on European-owned servers.",
       "source_url": "https://plausible.io/data-policy",
-      "last_verified": "2026-10-27"
+      "last_verified": "2026-11-09"
     },
     {
       "_a_verifier": true,
@@ -62,7 +62,7 @@
       "best_for": "Agencies and content sites needing built-in uptime checks and EU routing",
       "vendor_claim_summary": "According to Fathom Analytics' technical data documentation, EU traffic is anonymized on European servers before anonymized event records and SHA-256 visitor signatures are stored on US infrastructure.",
       "source_url": "https://usefathom.com/data",
-      "last_verified": "2026-10-27"
+      "last_verified": "2026-11-09"
     },
     {
       "_a_verifier": true,
@@ -82,7 +82,7 @@
       "best_for": "Large enterprises and healthcare/government teams requiring integrated Consent Management (CMP)",
       "vendor_claim_summary": "According to Piwik PRO's privacy documentation, the suite pairs web analytics with a built-in consent manager, configurable IP byte masking, and optional 30-minute session hashes.",
       "source_url": "https://piwik.pro/privacy-security/",
-      "last_verified": "2026-10-27"
+      "last_verified": "2026-11-09"
     },
     {
       "_a_verifier": true,
@@ -102,7 +102,7 @@
       "best_for": "Organizations needing full raw log ownership on their own MySQL servers",
       "vendor_claim_summary": "According to Matomo's official documentation, administrators can enforce CNIL consent-exemption settings, disable cookies, and mask IP addresses in memory before storage.",
       "source_url": "https://matomo.org/faq/general/configure-privacy-settings-in-matomo/",
-      "last_verified": "2026-10-27"
+      "last_verified": "2026-11-09"
     },
     {
       "_a_verifier": true,
@@ -122,7 +122,7 @@
       "best_for": "Marketing teams heavily reliant on Google Ads bidding and complex consent banners",
       "vendor_claim_summary": "According to Google's official documentation, GA4 collects EU visitor traffic through regional EU servers to discard IP addresses before processing and relies on Consent Mode signals in the EEA.",
       "source_url": "https://support.google.com/analytics/answer/12017362",
-      "last_verified": "2026-10-27"
+      "last_verified": "2026-11-09"
     }
   ]
 }
