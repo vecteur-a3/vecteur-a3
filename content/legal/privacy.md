@@ -22,8 +22,8 @@ In compliance with the **Federal Trade Commission (FTC) Guides Concerning the Us
 
 <!-- [À VÉRIFIER / ADAPTER DANS hugo.toml : Vérifiez que l'outil d'analytics déclaré ci-dessous correspond bien à celui configuré sur votre domaine final] -->
 Because our publication audits privacy-friendly web analytics platforms, we maintain full transparency regarding our own telemetry stack:
-* **Analytics Solution Used on This Portal:** This website is configured to use **Plausible Analytics** — a European-hosted, cookieless web analytics platform — to measure aggregate pageviews, referring domains, and outbound documentation clicks.
-* **No Browser Cookies or Cross-Site Tracking:** According to Plausible Analytics' official technical documentation, visitor measurement operates without setting browser cookies, writing to local storage, or collecting persistent cross-site identifiers.
+* **Zero Client-Side Analytics Script:** This portal does not load any third-party web analytics JavaScript in your browser. We monitor aggregate search engine indexing and inbound query performance via **Google Search Console**, and measure outbound software referrals exclusively when a reader clicks a disclosed partner link.
+* **No Browser Cookies or LocalStorage Tracking:** Because no client-side analytics tracker or advertising pixel is loaded on this website, no tracking cookies, localStorage identifiers, or device fingerprints are created when you read our technical audits.
 * **Infrastructure & Hosting Logs:** As a statically generated website hosted on **GitHub Pages** (GitHub, Inc.), standard HTTP request metadata (such as visitor IP addresses and User-Agent headers) is processed at the network edge by the hosting provider for security, rate-limiting, and DDoS mitigation in accordance with the official GitHub Privacy Statement. We do not claim that accessing any web server involves "zero network data transmission."
 
 ---

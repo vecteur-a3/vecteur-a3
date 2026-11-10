@@ -106,7 +106,7 @@ $OldEmailPattern  = "contact@(ton-domaine-privacy-a3\.com|ton-futur-domaine\.com
 Update-FileInPlace -FilePath "hugo.toml" -Replacements @{
     "baseURL\s*=\s*['""]https?://[^'""]+['""]"          = "baseURL = 'https://$($Config.NewDomain)/'"
     "contact_email\s*=\s*['""][^'""]+['""]"             = "contact_email = '$($Config.NewContactEmail)'"
-    "analytics_domain\s*=\s*['""][^'""]*['""]"          = "analytics_domain = '$($Config.NewDomain)'"
+    "analytics_domain\s*=\s*['""][^'""]*['""]"          = "analytics_domain = ''"
     $OldEmailPattern                                    = $Config.NewContactEmail
     $OldDomainPattern                                   = $Config.NewDomain
 }

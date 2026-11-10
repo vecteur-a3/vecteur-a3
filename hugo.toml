@@ -1,5 +1,6 @@
 # Chemin exact : hugo.toml
 # Configuration principale du site "Vecteur A3" (Privacy-Friendly Web Analytics & Technical Compliance)
+# Mode Analytics : Option A (0 $/mois - Aucun script JS tiers chargé ; suivi via Google Search Console & Dashboards affiliés)
 
 baseURL = 'https://privacyanalyticsintel.com/'
 title = 'Privacy Analytics & Compliance Intel'
@@ -36,7 +37,8 @@ disableKinds = ["taxonomy", "term", "section"]
   author = 'Vecteur A3 Technical Research'
   description = 'Independent technical comparisons of cookieless web analytics tools, framework implementation guides, and data protection authority publications. Not legal advice.'
   contact_email = 'contact@privacyanalyticsintel.com'
-  analytics_provider = 'Plausible Analytics'
-  analytics_domain = 'privacyanalyticsintel.com'
-  analytics_script_url = 'https://plausible.io/js/script.outbound-links.tagged-events.js'
+  # Option A (Budget 0 $) : laisser analytics_domain vide ('') pour ne charger aucun script externe payant.
+  analytics_provider = 'None (No client-side tracking script; aggregate SEO via Google Search Console)'
+  analytics_domain = ''
+  analytics_script_url = ''
   ymyl_disclaimer_short = 'Technical Specification Audit Only — Not Legal Advice. Verify compliance requirements with qualified legal counsel.'
