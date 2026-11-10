@@ -33,7 +33,7 @@ has_ambiguous_fields: true
 image: /images/default-cover.svg
 keyword: DPA Regulatory Digest
 last_verified: '2026-11-09'
-lastmod: '2026-11-09T05:10:27Z'
+lastmod: '2026-11-09T20:55:15Z'
 lien_affiliation_principal: https://www.simpleanalytics.com/
 not_legal_advice: Technical comparison only — Not legal advice.
 official_source_url: https://docs.simpleanalytics.com/data-security-and-ownership
@@ -114,6 +114,9 @@ type_page: regulatory_watch
 #### 2026-10-13 — European Data Protection Board (EDPB - Guidelines & Publications): Opinion 25/2026 on the draft decision of the Dutch Supervisory Authority regarding the Controller Binding Corporate Rules of the Snowflake Group [Official Institutional Publication &rarr;](https://www.edpb.europa.eu/documents/opinion-of-the-board-art-64/opinion-252026-on-the-draft-decision-of-the-dutch-supervisory_en)
 - **`[MANDATORY ATTRIBUTION]`** Source: European Data Protection Board (EDPB) - https://www.edpb.europa.eu (Extracted on 09/11/2026, EDPB Legal Notice: https://www.edpb.europa.eu/copyright_en) — **License:** [EDPB Legal Notice (Commercial & non-commercial reuse authorized with source acknowledge...](https://www.edpb.europa.eu/copyright_en) *(Extracted on 09/11/2026)*
 
+#### 2026-11-09 — CNIL (French Data Protection Authority - English Feed): Cybersécurité des collectivités territoriales : la CNIL prononce dix sanctions [Official Institutional Publication &rarr;](https://www.cnil.fr/fr/sanctions-cybersecurite-collectivites-territoriales)
+- **`[MANDATORY ATTRIBUTION]`** Source : CNIL – https://www.cnil.fr (Extrait le 09/11/2026, licence CC-BY-ND 4.0 FR : https://creativecommons.org/licenses/by-nd/4.0/deed.fr) — **License:** [CC-BY-ND 4.0 FR (NoDerivatives - Pas de modifications)](https://creativecommons.org/licenses/by-nd/4.0/deed.fr) *(Extracted on 09/11/2026)*
+
 #### 2026-11-06 — CNIL (French Data Protection Authority - English Feed): Recherches internes : quelles sont les obligations pour les professionnels de santé ? [Official Institutional Publication &rarr;](https://www.cnil.fr/fr/recherches-internes-sante-quelles-obligations)
 - **`[MANDATORY ATTRIBUTION]`** Source : CNIL – https://www.cnil.fr (Extrait le 09/11/2026, licence CC-BY-ND 4.0 FR : https://creativecommons.org/licenses/by-nd/4.0/deed.fr) — **License:** [CC-BY-ND 4.0 FR (NoDerivatives - Pas de modifications)](https://creativecommons.org/licenses/by-nd/4.0/deed.fr) *(Extracted on 09/11/2026)*
 
@@ -124,9 +127,6 @@ type_page: regulatory_watch
 - **`[MANDATORY ATTRIBUTION]`** Source : CNIL – https://www.cnil.fr (Extrait le 09/11/2026, licence CC-BY-ND 4.0 FR : https://creativecommons.org/licenses/by-nd/4.0/deed.fr) — **License:** [CC-BY-ND 4.0 FR (NoDerivatives - Pas de modifications)](https://creativecommons.org/licenses/by-nd/4.0/deed.fr) *(Extracted on 09/11/2026)*
 
 #### 2026-11-05 — CNIL (French Data Protection Authority - English Feed): Outils de rejeu de session : la CNIL publie sa recommandation pour guider les acteurs [Official Institutional Publication &rarr;](https://www.cnil.fr/fr/rejeu-de-session-recommandation)
-- **`[MANDATORY ATTRIBUTION]`** Source : CNIL – https://www.cnil.fr (Extrait le 09/11/2026, licence CC-BY-ND 4.0 FR : https://creativecommons.org/licenses/by-nd/4.0/deed.fr) — **License:** [CC-BY-ND 4.0 FR (NoDerivatives - Pas de modifications)](https://creativecommons.org/licenses/by-nd/4.0/deed.fr) *(Extracted on 09/11/2026)*
-
-#### 2026-11-04 — CNIL (French Data Protection Authority - English Feed): Privacy for Kids : le CEPD lance une plateforme dédiée à la vie privée des enfants [Official Institutional Publication &rarr;](https://www.cnil.fr/fr/cepd-privacy-for-kids)
 - **`[MANDATORY ATTRIBUTION]`** Source : CNIL – https://www.cnil.fr (Extrait le 09/11/2026, licence CC-BY-ND 4.0 FR : https://creativecommons.org/licenses/by-nd/4.0/deed.fr) — **License:** [CC-BY-ND 4.0 FR (NoDerivatives - Pas de modifications)](https://creativecommons.org/licenses/by-nd/4.0/deed.fr) *(Extracted on 09/11/2026)*
 
 
